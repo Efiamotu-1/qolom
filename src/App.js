@@ -1,6 +1,6 @@
 import React from 'react'
 // import { Router, Route } from 'react-router-dom'
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Layout from './components/Layout'
 import BusinessHours from './pages/BusinessHours'
 import ChangePassword from './pages/ChangePassword'
