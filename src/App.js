@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// import { Router, Route } from 'react-router-dom'
+import { Routes, Route, Link } from "react-router-dom";
+import Layout from './components/Layout'
+import BusinessHours from './pages/BusinessHours'
+import ChangePassword from './pages/ChangePassword'
+import ContactUs from './pages/ContactUs'
+import CreateLine from './pages/CreateLine'
+import EditProfile from './pages/EditProfile'
+import Home from './pages/Home'
+import LogOut from './pages/LogOut'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <Layout >
+      {/* <Switch> */}
+     <Routes>
 
-export default App;
+        <Route exact path="/" element={<Home />} />
+        <Route path="/businesshours" element={<BusinessHours />} />
+        <Route path="/changePassword" element={<ChangePassword />} />
+        <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/createline" element={<CreateLine />} />
+        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/logout" element={<LogOut />} />
+
+
+    </Routes>
+        
+      </Layout>
+    </>
+  )
+}
