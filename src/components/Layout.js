@@ -43,7 +43,7 @@ function ResponsiveDrawer(props) {
 
   const { window } = props;
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const classes = useStyles();
 
   const [mobileOpen, setMobileOpen] = useState(false);
