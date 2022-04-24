@@ -1,13 +1,11 @@
-import { Avatar, Button, Card, CardContent, TextField, CardHeader, Container, FormControl, FormLabel, IconButton, Typography } from '@mui/material'
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import {Button, Card, CardContent, TextField, Container, FormControl, Typography } from '@mui/material'
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-import { red } from '@mui/material/colors';
+// import { red } from '@mui/material/colors';
 
 
 import React from 'react'
-import CountrySelect from '../components/Selectors/CountrySelect';
-import StateSelect from '../components/Selectors/StateSelect';
-import AgeSelect from '../components/Selectors/AgeSelect';
+
 
 export default function EditProfile() {
   return (
