@@ -17,7 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 import PrimarySearchAppBar from './Navbar';
-import { BusinessCenter, DashboardCustomize, LinearScale, ContactMail, Logout, EditAttributes, PasswordOutlined} from '@mui/icons-material';
+import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined} from '@mui/icons-material';
 import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
 import { Avatar} from '@mui/material';
