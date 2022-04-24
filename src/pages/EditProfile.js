@@ -107,7 +107,9 @@ const classes = useStyles();
      />   
     <br/><br/>
     
-  <Button type='submit' color='primary' variant='contained'>submit</Button>
+  <Button 
+  className={classes.button}
+  type='submit' color='primary' variant='contained'>submit</Button>
   
   
   </form>
