@@ -23,7 +23,7 @@ import { makeStyles } from '@material-ui/core';
 import { Avatar} from '@mui/material';
 import Logo from '../assests/images/logo-mock.jpg'
 
-const drawerWidth = 280;
+const drawerWidth = 240;
 
 const useStyles = makeStyles({
   active: {
