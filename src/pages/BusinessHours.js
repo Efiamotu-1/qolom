@@ -1,6 +1,5 @@
-import { Button, CardActions} from "@mui/material";
+import { Button, CardActions, Grid} from "@mui/material";
 import { makeStyles } from '@material-ui/core';
-// import { Button} from 'react-bootstrap'
 // import Card
 // import Card from "../components/Cards/Card"
 // import React, { Component, useState } from "react";
@@ -12,7 +11,7 @@ import BasicTimePicker from "../components/Selectors/TimePicker";
 
 const useStyles = makeStyles({
   cardWidth : {
-    width : 600
+    width : 'auto'
   },
   center : {
     marginLeft : 'auto',
@@ -21,7 +20,9 @@ const useStyles = makeStyles({
   spacing : {
     display : 'flex',
     justifyContent : 'space-evenly',
-    alignItems : 'center'
+    alignItems : 'center',
+    marginTop : '10px'
+    
   },
   button : {
     // display : 'block',
@@ -45,15 +46,20 @@ export default function BusinessHours() {
   ];
 
   return (
-    // <Container sx={{backgroundColor : '#f4f4f4'}}>
-      <Card className={`${classes.cardWidth} ${classes.center}`}>
+
+
+    <Grid container  >
+    <Grid item xs={12} md={8} sx={{margin : 'auto'}}>
+      {/* <Item>xs=8</Item> */}
+
+
+      <Card >
         <CardContent className={classes.center}>
           <Typography
             sx={{ fontSize: 30 }}
             color="text.secondary"
             align="center"
             gutterBottom
-            className={classes.cardBg}
           >
             Select Business Hours
           </Typography>
@@ -63,10 +69,18 @@ export default function BusinessHours() {
               <br />
               <Typography variant="h6">{days}</Typography>
               <br />
-              <div className={classes.spacing}>
+              <Grid container spacing={2}>
+              <Grid 
+              item xs={12} md={6} lg={6}
+              >
               <BasicTimePicker title="Opens At" />
+              </Grid>
+              <Grid 
+              item xs={12} md={6} lg={6}
+              >
               <BasicTimePicker title="Closes At" />
-              </div>
+              </Grid>
+              </Grid>
               <br />
             </>
           ))}
@@ -84,5 +98,8 @@ export default function BusinessHours() {
           </CardActions>
         </CardContent>
       </Card>
+      </Grid>
+   
+   </Grid>
   );
 }

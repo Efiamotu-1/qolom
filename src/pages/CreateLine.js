@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Card, CardContent, TextField, Button, Typography} from '@mui/material'
+import {Card, CardContent, TextField, Button, Typography, Grid} from '@mui/material'
 import { makeStyles } from '@material-ui/core';
 
 
@@ -26,9 +26,9 @@ const useStyles = makeStyles({
 export default function CreateLine() {
   const classes = useStyles();
   return (
-    <div>
-      <Container>
-        <Card xs={12} md={6} lg={4} className={`${classes.cardWidth} ${classes.center}`}>
+      <Grid container >
+      <Grid item xs={12} md={8} lg={8} sx={{margin : 'auto'}}> 
+        <Card >
       <CardContent>
         <br/>
       <Typography
@@ -99,8 +99,8 @@ export default function CreateLine() {
       </CardContent>
       
     </Card>
-        </Container>
-    </div>
+        </Grid>
+        </Grid>
   )
 }
  

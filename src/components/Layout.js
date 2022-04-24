@@ -92,18 +92,18 @@ function ResponsiveDrawer(props) {
       index : 4,
       icon : <PasswordOutlined />
     },
-     {
-      text : "Contact Us",
-      path : "/contactus",
-      index : 4,
-      icon : <ContactMail />
-    },
-    {
-      text : "Log Out",
-      path : "/logout",
-      index : 4,
-      icon : <Logout />
-    },
+    //  {
+    //   text : "Contact Us",
+    //   path : "/contactus",
+    //   index : 4,
+    //   icon : <ContactMail />
+    // },
+    // {
+    //   text : "Log Out",
+    //   path : "/logout",
+    //   index : 4,
+    //   icon : <Logout />
+    // },
  
    
     

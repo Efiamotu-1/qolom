@@ -28,7 +28,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function HomeCard() {
+export default function HomeCard(props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -40,7 +40,7 @@ export default function HomeCard() {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            M
           </Avatar>
         }
         action={
@@ -48,8 +48,8 @@ export default function HomeCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props.title}
+        subheader={props.date}
       />
       <CardMedia
         component="img"
@@ -82,7 +82,8 @@ export default function HomeCard() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography variant="h5">How to create a line:</Typography>
+          <br/>
           <Typography paragraph>
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
             aside for 10 minutes.

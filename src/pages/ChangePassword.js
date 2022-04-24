@@ -1,33 +1,39 @@
-import {Button, Card, CardContent, TextField, Container, FormControl, Typography } from '@mui/material'
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-// import { red } from '@mui/material/colors';
+import {Button, Card, CardContent, TextField, Typography, Grid } from '@mui/material'
+import { makeStyles } from '@material-ui/core'
 
 
 import React from 'react'
 
+const  useStyles = makeStyles({
+  button : {
+    width : '100%'
+  }
+})
 
 export default function EditProfile() {
+const classes = useStyles();
+
   return (
-    <Container>
-    <Card sx={{ width : 600, margin : 'auto'}}>
+    <Grid container>
+    <Grid item xs={12} md={8} sx={{margin : 'auto'}}>
+
+    <Card sx={{ margin : 'auto'}}>
     
     <CardContent>
     <Typography
-            sx={{ fontSize: 24 }}
+            sx={{ fontSize: 30 }}
             color="text.secondary"
             align="center"
             gutterBottom
           >
             Change Password
           </Typography>
+          <br/>
     <form noValidate autoComplete='off' >
   
-  <FormControl >
+<Typography variant="h6">Current Password</Typography>
     
     <br/>
-
- 
      <TextField 
       //  sx={{width : 400}}
        label='Current Password' 
@@ -37,8 +43,10 @@ export default function EditProfile() {
        fullWidth
        required
      />   
-    <br/>
+    <br/><br/>
 
+    <Typography variant="h6">New Password</Typography>
+<br/>
     <TextField 
       //  sx={{width : 400}}
        label='New Password' 
@@ -48,8 +56,10 @@ export default function EditProfile() {
        fullWidth
        required
      />   
-    <br/>
+    <br/><br/>
 
+    <Typography variant="h6">Confirm Password</Typography>
+<br/>
     <TextField 
       //  sx={{width : 400}}
        label='Confirm Password' 
@@ -59,11 +69,12 @@ export default function EditProfile() {
        fullWidth
        required
      />   
-    <br/>
+    <br/><br/>
     
-  <Button type='submit' color='primary' variant='contained'>submit</Button>
+  <Button 
+  className={classes.button}
+  type='submit' color='primary' variant='contained'>submit</Button>
   
-  </FormControl>
   
   </form>
     </CardContent>
@@ -71,6 +82,8 @@ export default function EditProfile() {
       <Button size="small">Learn More</Button>
     </CardActions> */}
   </Card>
-  </Container>
+  </Grid>
+  </Grid>
+
   )
 }

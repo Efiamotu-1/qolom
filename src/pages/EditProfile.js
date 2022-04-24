@@ -1,22 +1,51 @@
-import { Avatar, Button, Card, CardContent, TextField, CardHeader, Container, FormControl, FormLabel } from '@mui/material'
+import { Avatar, Button, Card, CardContent, TextField, CardHeader, Grid, Typography } from '@mui/material'
 
-
+import { makeStyles } from '@material-ui/core';
 import { red } from '@mui/material/colors';
-
-
 import React from 'react'
 import CountrySelect from '../components/Selectors/CountrySelect';
 import StateSelect from '../components/Selectors/StateSelect';
 import AgeSelect from '../components/Selectors/AgeSelect';
 
+const useStyles = makeStyles({
+  center : {
+    display : 'flex', 
+    flexDirection : 'column',
+    justifyContent : 'center'
+  
+  }, 
+  button : {
+    width : '100%'
+  }
+})
+
+
 export default function EditProfile() {
+
+const classes = useStyles();
+
   return (
-    <Container>
-    <Card sx={{ width : 600, margin : 'auto'}}>
+    <Grid container>
+      <Grid item xs={12} md={8} lg={8} sx={{margin : 'auto'}}> 
+
+    <Card>
+    <Typography
+            sx={{ fontSize: 30 }}
+            color="text.secondary"
+            align="center"
+            gutterBottom
+          >
+            Edit Business Profile
+          </Typography>
     <CardHeader 
+    className={classes.center}
+    // sx={{margin : 'center'}}
         avatar={
           
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar 
+    className={classes.center}
+          
+          sx={{ bgcolor: red[500], width : 70, height : 70}} aria-label="recipe">
             M
           </Avatar>
         }
@@ -24,19 +53,17 @@ export default function EditProfile() {
       />
     <CardContent>
     <form noValidate autoComplete='off' >
-  
-  <FormControl >
-    <FormLabel>Country</FormLabel>
+<Typography variant="h6">Country</Typography>
     <br/>
     <CountrySelect />
     <br/>
 
-    <FormLabel>State/Region</FormLabel>
+<Typography variant="h6">State/Origin</Typography>
     <br/>
     <StateSelect /> 
     <br/>
 
-    <FormLabel>Business Name</FormLabel>
+<Typography variant="h6">Business Name</Typography>
     <br/>
      <TextField 
       //  sx={{width : 400}}
@@ -47,9 +74,9 @@ export default function EditProfile() {
        fullWidth
        required
      />   
-    <br/>
+    <br/><br/>
+    <Typography variant="h6">Address (including state/region)</Typography>
 
-    <FormLabel>Address (including state/region)</FormLabel>
     <br/>
      <TextField 
       //  sx={{width : 400}}
@@ -60,14 +87,14 @@ export default function EditProfile() {
        fullWidth
        required
      />   
-    <br/>
+    <br/><br/>
+    <Typography variant="h6">Minimun required age to use business</Typography>
 
-    <FormLabel>Minimun required age to use business</FormLabel>
     <br/>
     <AgeSelect /> 
     <br/>
+    <Typography variant="h6">Password</Typography>
 
-    <FormLabel>Password</FormLabel>
     <br/>
      <TextField 
       //  sx={{width : 400}}
@@ -78,11 +105,10 @@ export default function EditProfile() {
        fullWidth
        required
      />   
-    <br/>
+    <br/><br/>
     
   <Button type='submit' color='primary' variant='contained'>submit</Button>
   
-  </FormControl>
   
   </form>
     </CardContent>
@@ -90,6 +116,7 @@ export default function EditProfile() {
       <Button size="small">Learn More</Button>
     </CardActions> */}
   </Card>
-  </Container>
+  </Grid>
+  </Grid>
   )
 }
