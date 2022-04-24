@@ -169,7 +169,9 @@ export default function PrimarySearchAppBar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static"
+      elevation = {0}
+      >
         <Toolbar sx={{backgroundColor : 'rgb(17, 24, 39)'}}>
           {/* <IconButton
             size="large"

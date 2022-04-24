@@ -14,7 +14,7 @@ export default function App() {
   return (
     <>
       <Layout >
-      {/* <Switch> */}
+
      <Routes>
 
         <Route exact path="/" element={<Home />} />
@@ -23,12 +23,17 @@ export default function App() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/createline" element={<CreateLine />} />
         <Route path="/editprofile" element={<EditProfile />} />
+        
         <Route path="/logout" element={<LogOut />} />
+
+
 
 
     </Routes>
         
       </Layout>
+
+
     </>
   )
 }

@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 // import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -17,24 +17,28 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 import PrimarySearchAppBar from './Navbar';
-import { BusinessCenter, ChevronLeft, DashboardCustomize, LinearScale, ContactMail} from '@mui/icons-material';
-import { useNavigate} from 'react-router-dom'
+import { BusinessCenter, DashboardCustomize, LinearScale, ContactMail, Logout, EditAttributes, PasswordOutlined} from '@mui/icons-material';
+import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
+import { Avatar} from '@mui/material';
+import Logo from '../assests/images/logo-mock.jpg'
 
-const drawerWidth = 300;
+const drawerWidth = 280;
 
 const useStyles = makeStyles({
   active: {
       backgroundColor: '#f9f9f9',
-      color : 'red'
+      color : 'green',
+   
   },
-  white : {
-    // backgroundColor : 'gray',
-    // color : 'white'
-  },
-  red : {
-    color : 'gray'
-  }
+ center : {
+   marginLeft : 'auto',
+   marginRight : 'auto',
+   margin : 40
+ },
+ divider : {
+  background : 'white'
+}
 })
 
 function ResponsiveDrawer(props) {
@@ -43,7 +47,7 @@ function ResponsiveDrawer(props) {
 
   const { window } = props;
   const navigate = useNavigate();
-  // const location = useLocation();
+  const location = useLocation();
   const classes = useStyles();
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -58,54 +62,90 @@ function ResponsiveDrawer(props) {
 
   const drawerList = [
     {
-      text : "DASHBOARD",
+      text : "Dashboard",
       path : "/",
       index : 1,
       icon : <DashboardCustomize />
     },
     {
-      text : "BUSINESS HOURS",
+      text : "Business Hours",
       path : "/businesshours",
       index : 2,
       icon : <BusinessCenter />
     },
       {
-      text : "CREATE LINE",
+      text : "Create Line",
       path : "/createline",
       index : 3,
       icon : <LinearScale />
     },
+   
     {
-      text : "CONTACT US",
+      text : "Edit Profile",
+      path : "/editprofile",
+      index : 4,
+      icon : <EditAttributes />
+    },
+    {
+      text : "Change Password",
+      path : "/changepassword",
+      index : 4,
+      icon : <PasswordOutlined />
+    },
+     {
+      text : "Contact Us",
       path : "/contactus",
       index : 4,
       icon : <ContactMail />
     },
+    {
+      text : "Log Out",
+      path : "/logout",
+      index : 4,
+      icon : <Logout />
+    },
+ 
+   
+    
   
   ]
-
+  
   const drawer = (
-    <div >
-      <Toolbar 
-      sx={{backgroundColor : 'rgb(17, 24, 39)', flexDirection : 'column', color : 'white', alignItems: 'flex-start', width: '100%'}}
-      >
-      <Divider />
-      <IconButton
+
+      <>
+      {/* <IconButton
             // color="inherit"
             aria-label="open drawer"
             edge="right"
             onClick={closeHandleDrawerToggler}
             sx={{ color: 'white'}}
           >
-               <ChevronLeft />
-            {/* <MenuIcon /> */}
-          </IconButton>
+      </IconButton> */}
+
+          <Avatar
+            src={Logo}
+            sx={{ height: "70px", width: "70px" }}
+            className={classes.center}
+          />
+          {/* <Typography className={classes.active}>
+            <Typography variant="h6">Prabhatsinh Rathod</Typography>
+            <Typography paragraph>UI/UX Designer</Typography>
+          </Typography> */}
+          {/* <div className="center">
+            <Button
+              variant="contained"
+              startIcon={<RadarOutlined />}
+              color="primary"
+            >
+              Become a Pro
+            </Button>
+          </div> */}
+<Divider className={classes.divider}/>
       <List>
         {drawerList.map((list) => (
           <ListItem 
           button key={list.index}
-          className={classes.active}
-          // className={location.pathname == list.path ? classes.active : null}
+          className={location.pathname === list.path ? classes.active : null}
           onClick={()=> navigate(list.path)}
           >
             <ListItemIcon 
@@ -114,16 +154,22 @@ function ResponsiveDrawer(props) {
             >
               {list.icon} 
             </ListItemIcon>
-           <ListItemText primary={list.text} 
-           className = {classes.red}
+           <ListItemText 
+          //  sx={{fontSize : 1}}
+           primary={list.text} 
+           sx = {{color : '#f4f4f4'}}
+
            /> 
           </ListItem>
+          
         ))}
+           {/* console.log(list.path) */}
+
       </List>
-      {/* <Divider /> */}
+      <Divider className={classes.divider}/>
       
-      </Toolbar>
-    </div>
+      
+    </>
   );
   console.log(classes.active)
 
@@ -158,7 +204,7 @@ function ResponsiveDrawer(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, backgroundColor : 'green' }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, }}
         aria-label="mailbox folders"
       >
         {/* <Toolbar sx={{flexDirection: 'column', backgroundColor : 'green'}}> */}
@@ -174,7 +220,7 @@ function ResponsiveDrawer(props) {
           sx={{
             // backgroundColor : 'rgb(17, 24, 39)',
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background : 'rgb(17, 24, 39)' },
           }}
         >
           {drawer}
@@ -183,7 +229,7 @@ function ResponsiveDrawer(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background : 'rgb(17, 24, 39)' },
           }}
           open
         >
@@ -192,7 +238,7 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, background : '#f4f4f4' }}
       >
         <Toolbar />
         {props.children}
