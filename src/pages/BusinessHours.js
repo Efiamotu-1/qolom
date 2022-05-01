@@ -49,7 +49,7 @@ export default function BusinessHours() {
 
 
     <Grid container  >
-    <Grid item xs={12} md={8} sx={{margin : 'auto'}}>
+    <Grid item xs={12} md={6} lg={6} sx={{margin : 'auto'}}>
       {/* <Item>xs=8</Item> */}
 
 

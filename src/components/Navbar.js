@@ -16,6 +16,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Avatar } from '@mui/material';
+import Logo from '../assests/images/logo-mock.jpg'
 
 const drawerWidth = 240
 
@@ -24,9 +26,9 @@ const drawerWidth = 240
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.black, 0.15),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.black, 0.25),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -172,7 +174,7 @@ export default function PrimarySearchAppBar(props) {
       <AppBar position="static"
       elevation = {0}
       >
-        <Toolbar sx={{backgroundColor : 'rgb(17, 24, 39)'}}>
+        <Toolbar sx={{backgroundColor : 'white'}}>
           {/* <IconButton
             size="large"
             edge="start"
@@ -187,7 +189,7 @@ export default function PrimarySearchAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, color : 'rgb(17, 24, 39)' }}
           >
             <MenuIcon />
           </IconButton>
@@ -201,7 +203,7 @@ export default function PrimarySearchAppBar(props) {
           </Typography> */}
           <Search>
             <SearchIconWrapper>
-              <SearchIcon />
+              <SearchIcon sx={{color : 'gray'}}/>
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
@@ -212,7 +214,7 @@ export default function PrimarySearchAppBar(props) {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <MailIcon sx={{color: 'gray'}}/>
               </Badge>
             </IconButton>
             <IconButton
@@ -221,7 +223,7 @@ export default function PrimarySearchAppBar(props) {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <NotificationsIcon  sx={{color : 'gray'}}/>
               </Badge>
             </IconButton>
             <IconButton
@@ -233,7 +235,9 @@ export default function PrimarySearchAppBar(props) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <Avatar 
+              src={Logo}
+              sx={{color: 'gray', width : 40}}/>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

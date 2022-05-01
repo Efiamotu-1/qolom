@@ -30,7 +30,7 @@ import EditProfile from '../pages/EditProfile';
 import ChangePassword from '../pages/ChangePassword'
 
 
-const drawerWidth = 280;
+const drawerWidth = 240;
 
 const useStyles = makeStyles({
   active: {
@@ -70,7 +70,7 @@ function ResponsiveDrawer(props) {
   const drawerList = [
     {
       text : "Dashboard",
-      path : "",
+      path : "dashboard",
       index : 1,
       icon : <DashboardCustomize />
     },
@@ -157,14 +157,14 @@ function ResponsiveDrawer(props) {
           >
             <ListItemIcon 
             className = {classes.white}
-            sx = {{color : 'white', ml : 2}}
+            sx = {{color : 'white'}}
             >
               {list.icon} 
             </ListItemIcon>
            <ListItemText 
           //  sx={{fontSize : 1}}
            primary={list.text} 
-           sx = {{color : '#f4f4f4', ml : -3,}}
+           sx = {{color : '#f4f4f4'}}
 
            /> 
           </ListItem>
@@ -246,9 +246,8 @@ function ResponsiveDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, background : '#f4f4f4', }}
       >
-        <Toolbar />
         <Routes>
-          <Route path="" element={<Home /> } />
+          <Route path="dashboard" element={<Home /> } />
           <Route path="businesshours" element={<BusinessHours /> } />
           <Route path="createline" element={<CreateLine /> } />
           <Route path="editprofile" element={<EditProfile /> } />

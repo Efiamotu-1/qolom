@@ -9,7 +9,7 @@ export default function Home() {
       title = "Create A Queue"
       date = "April, 24th 2022"
       />
-      
+      Home
 
     </Container>
   )
