@@ -34,11 +34,12 @@ const useStyles = makeStyles({
 
 whiteBg : {
   display : 'flex',
+  flexDirection : 'column',
   alignItems : 'center',
    marginLeft : '20px',
    marginRight : '20px',
    borderRadius : 7,
-   background : '#1F293',
+   background : '#1F2937',
    width : 'auto',
    padding : 15,
    marginBottom : '20px'
