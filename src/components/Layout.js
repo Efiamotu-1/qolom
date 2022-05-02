@@ -38,7 +38,7 @@ whiteBg : {
    marginLeft : '20px',
    marginRight : '20px',
    borderRadius : 7,
-   background : '#4B5563',
+   background : '#1F293',
    width : 'auto',
    padding : 15,
    marginBottom : '20px'
@@ -120,8 +120,8 @@ function ResponsiveDrawer(props) {
             className={classes.center}
           />
            <div className={classes.whiteBg}>
-            <Typography variant="h6" color="white">Acme</Typography>
-            <Typography paragraph></Typography>
+            <Typography variant="h6" color="white">Acme Inc</Typography>
+            <Typography paragraph color="gray">Your Premium</Typography>
           </div>
           
 <Divider className={classes.divider}/>
