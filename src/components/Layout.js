@@ -1,26 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-// import IconButton from '@mui/material/IconButton';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-// import MailIcon from '@mui/icons-material/Mail';
-// import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
+import { List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, CssBaseline,  Avatar, Divider, Drawer, Box, AppBar } from '@mui/material';
 import PrimarySearchAppBar from './Navbar';
-import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined} from '@mui/icons-material';
+import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined,} from '@mui/icons-material';
 import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
-import { Avatar} from '@mui/material';
 import Logo from '../assests/images/logo-mock.jpg'
 import {Routes, Route} from 'react-router-dom'
 import BusinessHours from '../pages/BusinessHours';
@@ -30,22 +15,35 @@ import EditProfile from '../pages/EditProfile';
 import ChangePassword from '../pages/ChangePassword'
 
 
-const drawerWidth = 280;
+const drawerWidth = 300;
 
 const useStyles = makeStyles({
   active: {
-      backgroundColor: '#f9f9f9',
-      color : 'green',
+      background: 'red',
+      // color : 'green',
    
   },
  center : {
    marginLeft : 'auto',
    marginRight : 'auto',
-   margin : 40
+   margin : 30,
  },
  divider : {
   background : 'white'
+},
+
+whiteBg : {
+  display : 'flex',
+  alignItems : 'center',
+   marginLeft : '20px',
+   marginRight : '20px',
+   borderRadius : 7,
+   background : '#4B5563',
+   width : 'auto',
+   padding : 15,
+   marginBottom : '20px'
 }
+
 })
 
 function ResponsiveDrawer(props) {
@@ -96,22 +94,9 @@ function ResponsiveDrawer(props) {
     {
       text : "Change Password",
       path : "changepassword",
-      index : 4,
+      index : 5,
       icon : <PasswordOutlined />
     },
-    //  {
-    //   text : "Contact Us",
-    //   path : "/contactus",
-    //   index : 4,
-    //   icon : <ContactMail />
-    // },
-    // {
-    //   text : "Log Out",
-    //   path : "/logout",
-    //   index : 4,
-    //   icon : <Logout />
-    // },
- 
    
     
   
@@ -134,30 +119,30 @@ function ResponsiveDrawer(props) {
             sx={{ height: "70px", width: "70px" }}
             className={classes.center}
           />
-          {/* <Typography className={classes.active}>
-            <Typography variant="h6">Prabhatsinh Rathod</Typography>
-            <Typography paragraph>UI/UX Designer</Typography>
-          </Typography> */}
-          {/* <div className="center">
-            <Button
-              variant="contained"
-              startIcon={<RadarOutlined />}
-              color="primary"
-            >
-              Become a Pro
-            </Button>
-          </div> */}
+           <div className={classes.whiteBg}>
+            <Typography variant="h6" color="white">Acme</Typography>
+            <Typography paragraph></Typography>
+          </div>
+          
 <Divider className={classes.divider}/>
-      <List>
+      <List >
         {drawerList.map((list) => (
           <ListItem 
-          button key={list.index}
+          sx={{ borderRadius : 3, ml: 2, mr : 2, width : 'auto',
+             '&:hover' : {
+            background : '#1F2937',
+          }}}
+          key={list.index}
           className={location.pathname === list.path ? classes.active : null}
-          onClick={()=> navigate(list.path)}
+          //  className={classes.active}
+           button
+          //  selected={list.path}
+          //  alignItems="flex-start"
+           onClick={()=> navigate(list.path)}
           >
             <ListItemIcon 
             className = {classes.white}
-            sx = {{color : 'white', ml : 2}}
+            sx = {{color : 'white'}}
             >
               {list.icon} 
             </ListItemIcon>
@@ -226,7 +211,7 @@ function ResponsiveDrawer(props) {
           sx={{
             // backgroundColor : 'rgb(17, 24, 39)',
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background : 'rgb(17, 24, 39)' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background : '#111827' },
           }}
         >
           {drawer}
@@ -235,7 +220,7 @@ function ResponsiveDrawer(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background : 'rgb(17, 24, 39)' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background : '#111827' },
           }}
           open
         >

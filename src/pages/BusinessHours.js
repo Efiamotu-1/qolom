@@ -1,11 +1,7 @@
 import { Button, CardActions, Grid} from "@mui/material";
 import { makeStyles } from '@material-ui/core';
-// import Card
-// import Card from "../components/Cards/Card"
-// import React, { Component, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-// import Button from '@mui/material/Button';
 import Typography from "@mui/material/Typography";
 import BasicTimePicker from "../components/Selectors/TimePicker";
 
@@ -50,10 +46,9 @@ export default function BusinessHours() {
 
     <Grid container  >
     <Grid item xs={12} md={6} lg={6} sx={{margin : 'auto'}}>
-      {/* <Item>xs=8</Item> */}
 
 
-      <Card >
+      <Card sx={{borderRadius : 5}}>
         <CardContent className={classes.center}>
           <Typography
             sx={{ fontSize: 30 }}
@@ -61,7 +56,7 @@ export default function BusinessHours() {
             align="center"
             gutterBottom
           >
-            Select Business Hours
+          Business Hours
           </Typography>
 
           {businessDays.map((days) => (
@@ -71,12 +66,16 @@ export default function BusinessHours() {
               <br />
               <Grid container spacing={2}>
               <Grid 
+              sx={{display : 'flex', justifyContent : 'center'}}
               item xs={12} md={6} lg={6}
               >
+                
               <BasicTimePicker title="Opens At" />
               </Grid>
               <Grid 
               item xs={12} md={6} lg={6}
+              sx={{display : 'flex', justifyContent : 'center'}}
+
               >
               <BasicTimePicker title="Closes At" />
               </Grid>

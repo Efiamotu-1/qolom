@@ -14,7 +14,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import queueOne from '../../assests/images/atm-queue-.jpg'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -36,7 +35,7 @@ export default function HomeCard(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: '100%' }}>
+    <Card sx={{ width: '300px', borderRadius : 5 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -54,7 +53,7 @@ export default function HomeCard(props) {
       <CardMedia
         component="img"
         height="auto"
-        image={queueOne}
+        image={props.queue}
         alt="...bank queue"
       />
       <CardContent>

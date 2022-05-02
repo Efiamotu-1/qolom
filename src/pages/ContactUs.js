@@ -18,12 +18,7 @@ export default function BasicGrid() {
       <Grid container spacing={2}>
         <Grid item xs={8} sx={{display : 'flex'}}>
           {/* <Item>xs=8</Item> */}
-          <div>
-          Hello
-          </div>
-          <div>
-          Hello
-          </div>
+     
           
         </Grid>
         <Grid item xs={4}>

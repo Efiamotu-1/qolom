@@ -17,7 +17,7 @@ const classes = useStyles();
     <Grid container>
     <Grid item xs={12} md={8} sx={{margin : 'auto'}}>
 
-    <Card sx={{ margin : 'auto'}}>
+    <Card sx={{ margin : 'auto', borderRadius : 5}}>
     
     <CardContent>
     <Typography

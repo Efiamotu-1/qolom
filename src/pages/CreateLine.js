@@ -28,7 +28,7 @@ export default function CreateLine() {
   return (
       <Grid container >
       <Grid item xs={12} md={8} lg={8} sx={{margin : 'auto'}}> 
-        <Card >
+        <Card sx={{borderRadius : 5}}>
       <CardContent>
         <br/>
       <Typography

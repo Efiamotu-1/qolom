@@ -28,7 +28,7 @@ const classes = useStyles();
     <Grid container>
       <Grid item xs={12} md={8} lg={8} sx={{margin : 'auto'}}> 
 
-    <Card>
+    <Card sx={{borderRadius : 5}}>
     <Typography
             sx={{ fontSize: 30 }}
             color="text.secondary"
