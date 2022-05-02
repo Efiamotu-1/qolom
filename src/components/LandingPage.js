@@ -25,6 +25,7 @@ const classes = useStyles();
   <Navbar.Brand href="#home">
     <img 
     src={Logo}
+    alt="../"
     width = "70px"
     height = '50px'
     />
@@ -54,6 +55,7 @@ const classes = useStyles();
 
     <Container>
     <img 
+    alt="../"
     src={bodyImage}
     width = '100%'
     />
