@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import BasicTimePicker from "../components/Selectors/TimePicker";
+import BasicTimePicker from "../Selectors/TimePicker";
 
 const useStyles = makeStyles({
   cardWidth : {

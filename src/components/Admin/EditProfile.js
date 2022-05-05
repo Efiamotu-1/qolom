@@ -3,9 +3,9 @@ import { Avatar, Button, Card, CardContent, TextField, CardHeader, Grid, Typogra
 import { makeStyles } from '@material-ui/core';
 import { red } from '@mui/material/colors';
 import React from 'react'
-import CountrySelect from '../components/Selectors/CountrySelect';
-import StateSelect from '../components/Selectors/StateSelect';
-import AgeSelect from '../components/Selectors/AgeSelect';
+import CountrySelect from '../Selectors/CountrySelect';
+import StateSelect from '../Selectors/StateSelect';
+import AgeSelect from '../Selectors/AgeSelect';
 
 const useStyles = makeStyles({
   center : {

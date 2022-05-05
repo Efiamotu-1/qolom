@@ -1,9 +1,9 @@
 import { Container, Grid } from '@mui/material'
 import React from 'react'
-import HomeCard from '../components/Cards/HomeCard'
-import queueOne from '../assests/images/patience-queue.jpg'
-import queueTwo from '../assests/images/atm-queue-.jpg'
-import queueThree from '../assests/images/covid-queue.jpg'
+import HomeCard from '../Cards/HomeCard'
+import queueOne from '../../assests/images/patience-queue.jpg'
+import queueTwo from '../../assests/images/atm-queue-.jpg'
+import queueThree from '../../assests/images/covid-queue.jpg'
 
 
 export default function Home() {

@@ -8,11 +8,11 @@ import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
 import Logo from '../assests/images/logo-mock.jpg'
 import {Routes, Route} from 'react-router-dom'
-import BusinessHours from '../pages/BusinessHours';
-import Home from '../pages/Home';
-import CreateLine from '../pages/CreateLine';
-import EditProfile from '../pages/EditProfile';
-import ChangePassword from '../pages/ChangePassword'
+import Home from './Admin/Home';
+import BusinessHours from './Admin/BusinessHours';
+import CreateLine from './Admin/CreateLine';
+import EditProfile from './Admin/EditProfile';
+import ChangePassword from './Admin/ChangePassword'
 
 
 const drawerWidth = 300;
@@ -132,6 +132,10 @@ function ResponsiveDrawer(props) {
           sx={{ borderRadius : 3, ml: 2, mr : 2, width : 'auto',
              '&:hover' : {
             background : '#1F2937',
+            '&:focus' : {
+              background : 'red',
+              color : 'yellow'
+            }
           }}}
           key={list.index}
           className={location.pathname === list.path ? classes.active : null}
