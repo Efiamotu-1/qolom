@@ -5,7 +5,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 export default function StateSelect() {
   return (
-    <Stack spacing={2} sx={{ width: 300 }}>
+    <Stack spacing={2} sx={{ width: '100%' }}>
      
       <Autocomplete
         freeSolo
@@ -15,7 +15,7 @@ export default function StateSelect() {
         renderInput={(params) => (
           <TextField
             {...params}
-            label="State"
+            label="Choose a State"
             InputProps={{
               ...params.InputProps,
               type: 'search',

@@ -1,13 +1,26 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { makeStyles } from '@material-ui/core';
 import Autocomplete from '@mui/material/Autocomplete';
 
+
+const  useStyles = makeStyles({
+  button : {
+    // width : '100%',
+    // background : 'red'
+  }
+})
+
 export default function CountrySelect() {
+
+const classes = useStyles()
+
+
   return (
     <Autocomplete
       id="country-select-demo"
-      sx={{ width: 300 }}
+      sx={{ width: '100%' }}
       options={countries}
       autoHighlight
       getOptionLabel={(option) => option.label}
@@ -26,7 +39,7 @@ export default function CountrySelect() {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Choose a country"
+            label="Choose a country"
           inputProps={{
             ...params.inputProps,
             autoComplete: 'new-password', // disable autocomplete and autofill

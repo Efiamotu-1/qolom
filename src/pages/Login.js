@@ -1,8 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Card, CardContent, Typography, CardActions, Button, Toolbar, TextField, Grid} from '@mui/material'
 import { ChevronLeft } from '@mui/icons-material'
 
 function Login() {
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [emailError, setEmailError] = useState(false)
+  const [passwordError, setPasswordError] = useState(false) 
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    // setEmailError(false)
+    // setPasswordError(false)
+    // if (email == '' && password == '') {
+    //   setEmailError(true)
+    //   setPasswordError(true)
+
+    //   alert('please fill all fields')
+    //   return
+    // }
+    // if (email === '') {
+    //   setEmailError(true)
+    //   alert('insert an email')
+    // }
+
+    // if (password === '') {
+    //   setPasswordError(true)
+    //   alert('insert a password')
+    // }
+
+  }
+
   return (
       <Grid >
       <Toolbar />
@@ -22,16 +54,17 @@ function Login() {
         <Typography sx={{ fontSize: 30}} color="text.secondary" align = "center" gutterBottom>
           LOG IN  
         </Typography>
+<br/>
+      <form onSubmit={handleSubmit}>
 
-        <br/>
-     <TextField 
-    //    sx={{width : 400}}
+      <TextField 
        label='Email Address' 
        variant='outlined'
-       placeholder='' 
        color='primary' 
        fullWidth
        required
+       onChange= {(e) => { setEmail(e.target.value)}}
+
      />   
     <br/><br/>
 
@@ -40,19 +73,20 @@ function Login() {
     //    sx={{width : 400}}
        label='Password' 
        variant='outlined'
-       placeholder='' 
+       type="password"
        color='primary' 
        fullWidth
        required
+       onChange= {(e) => { setPassword(e.target.value)}}
      />   
     <br/><br/>
 
-      </CardContent>
-      <CardActions>
-        <Button href="/admin" variant='contained' size="large" sx={{width: '100%', marginLeft : 'auto', marginRight : 'auto'}}>Sign in Now</Button>
-      
-      </CardActions>
-      {/* <br/> */}
+    <CardActions>
+      <Button type="submit" variant='contained' sx={{width: '100%', }}>Sign In</Button> 
+    </CardActions>
+
+      </form>
+    </CardContent>
 
       <Typography paragraph sx={{ml:2}}>
           Don't have an account? <Button variant='text' href="/register" sx={{textTransform : 'lowercase', ml : -1}}>Sign Up</Button> 

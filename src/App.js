@@ -5,7 +5,8 @@ import { Routes, Route} from "react-router-dom";
 import Layout from './components/Layout'
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import SignUp from './pages/UserSignUp';
+import AdminSignUp from './components/Admin/AdminSignUp'
 
 // import BusinessHours from './pages/BusinessHours'
 // import ChangePassword from './pages/ChangePassword'
@@ -31,6 +32,8 @@ export default function App() {
          <Route path="/admin/*" element={<Layout />} />
          <Route path="/login" element={<Login />} />
          <Route path="/register" element={<SignUp />} />
+         <Route path="/admin/register" element={<AdminSignUp />} />
+
 
 
        {/* <Route path="teams" element={<Home />}>

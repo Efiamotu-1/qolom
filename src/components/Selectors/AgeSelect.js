@@ -5,7 +5,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 export default function AgeSelect() {
   return (
-    <Stack spacing={2} sx={{ width: 300 }}>
+    <Stack spacing={2} sx={{ width: '100%' }}>
      
       <Autocomplete
         freeSolo
