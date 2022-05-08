@@ -58,8 +58,8 @@ function LandingPage() {
 
       <Carousels />
 
-      <Grid container spacing={4} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'center', py : 15}}>
-        <Grid item xs={12} md={3} lg={3}>
+      <Grid container spacing={2} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'space-evenly', py : 15}}>
+        <Grid item xs={12} md={4} lg={4} >
           <Box sx={{width : 300, margin : 'auto'}}>
           <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 
            <TimerTwoTone />
@@ -73,7 +73,7 @@ function LandingPage() {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={3} lg={3} >
+        <Grid item xs={12} md={4} lg={4} >
         <Box sx={{width : 300, margin : 'auto'}}>
 
         <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 
@@ -87,7 +87,7 @@ function LandingPage() {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={3} lg={3}>
+        <Grid item xs={12} md={4} lg={4}>
         <Box sx={{width : 300, margin : 'auto'}}>
 
         <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 

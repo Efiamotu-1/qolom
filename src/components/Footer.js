@@ -23,7 +23,7 @@ function Footer() {
 
 
     <Grid container spacing={2} sx={{ color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 10}}>
-  <Grid item xs={12} md={4} lg={4} sx={{ml : 5, mb : 4 }}>
+  <Grid item xs={12} md={4} lg={4} sx={{ mb : 4 }}>
   <img 
             src={Logo}
             width='100px'
@@ -31,15 +31,15 @@ function Footer() {
             alt='...Logo'
             class="m-auto"
             />
-            <Typography paragraph>
+            {/* <Typography paragraph>
             Talent is everywhere, but opportunity is not.
-            </Typography>
+            </Typography> */}
 
-            <Typography paragraph sx={{width : 300}}>
+            <Typography variant="h6" sx={{width : 250, mb : 1, mt : -1}}>
             Follow us on our journey to help you skip the hassle of queues 
             and get what you want at the click of a button connect with us via our socials
             </Typography>
-            <Box sx={{width : 300, display : 'flex', justifyContent : 'space-between'}}>
+            <Box sx={{width : 250, display : 'flex', justifyContent : 'space-between'}}>
                 <Facebook sx={{width : '40px', height: '40px', background : '#3b82f6', borderRadius : 2}}/>
                 <Instagram sx={{width : '40px', height: '40px', background : 'linear-gradient(to left ,#8a3ab9, #e95950, #bc2a8d, #fccc63, #fbad50, #cd486b, #4c68d7);', borderRadius : 2}}/>
                 <Twitter sx={{width : '40px', height: '40px', background : '#60a5fa', borderRadius : 2}}/>
@@ -48,7 +48,7 @@ function Footer() {
             
   </Grid>
 
-  <Grid item xs={12} md={3} lg={3} sx={{ml : 5, mb : 4}}>
+  <Grid item xs={12} md={3} lg={3} sx={{ mb : 4}}>
   <Typography variant="h4" color="#93c5fd"> Company </Typography>
            <Typography variant="h6" className={classes.hoverlink}>Home</Typography>
            <Typography variant="h6" className={classes.hoverlink}>Contact</Typography>
@@ -57,7 +57,7 @@ function Footer() {
            <Typography variant="h6" className={classes.hoverlink}>Sign Up(Business)</Typography>
            <Typography variant="h6" className={classes.hoverlink}>Forgot Password</Typography>
  </Grid>
-  <Grid item xs={12} md={3} lg={3} sx={{ml : 5, }}>
+  <Grid item xs={12} md={3} lg={3} sx={{ }}>
   <Typography variant="h4" color="#93c5fd">Location</Typography>
     <Typography variant='h6' sx={{width : 300}}>
     Qolom Ltd
