@@ -20,19 +20,34 @@ import AgeSelect from '../Selectors/AgeSelect';
 
 export default function AdminSignUp() {
 
-    // const [firstname, setFirstname] = useState('')
-    // const [lastname, setLastname] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [password, setPassword] = useState('')
+    const [firstname, setFirstname] = useState('')
+    const [lastname, setLastname] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
 
-    const classes = useStyles()
 
 
     
    
     const handleSubmit = (e) => {
       e.preventDefault()
+
+      if (firstname == '') {
+        console.log("empty")
+      }
+
+      if (lastname == '') {
+        console.log("empty")
+      }
+
+      if (email == '') {
+        console.log("empty")
+      }
+
+      if (password == '') {
+        console.log("empty")
+      }
 
      
     }
