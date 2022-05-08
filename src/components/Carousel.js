@@ -29,7 +29,7 @@ function Carousels() {
 
   return (
     <Carousel fade variant="dark" controls={false} indicators={false}>
-    <Carousel.Item interval={1500}>
+    <Carousel.Item interval={2000}>
       <div className={classes.opacity}>
 <img
         className="d-block w-100"
@@ -44,7 +44,7 @@ function Carousels() {
         <p>Be present only when you need to.</p>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item interval={1500}> 
+    <Carousel.Item interval={2000}> 
       <img
         className="d-block w-100"
         src={Bunny}
@@ -56,7 +56,7 @@ function Carousels() {
         <p>Make your own line and manage the queue.</p>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item interval={1500}> 
+    <Carousel.Item interval={2000}> 
       <img
         className="d-block w-100"
         src={Bunny}

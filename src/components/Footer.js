@@ -22,7 +22,7 @@ function Footer() {
   return (
 
 
-    <Grid container spacing={2} sx={{ color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 20}}>
+    <Grid container spacing={2} sx={{ color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 10}}>
   <Grid item xs={12} md={4} lg={4} sx={{ml : 5, mb : 4 }}>
   <img 
             src={Logo}
