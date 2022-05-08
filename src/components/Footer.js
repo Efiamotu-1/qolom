@@ -68,7 +68,7 @@ function Footer() {
     </Typography>
   </Grid>
 
-  <Box sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 5,}}>
+  <Grid container sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 5,}}>
     <Box>
     <Link href="#" variant='h6' underline="hover" color="white" >
   Terms of use
@@ -83,7 +83,7 @@ function Footer() {
 
     <Typography variant='h6' align='center'>All rights reserved</Typography>
  
-  </Box>
+  </Grid>
 
 </Grid>
   )
