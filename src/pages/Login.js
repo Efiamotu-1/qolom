@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault()
 
   
-    if (email == '' && password == '') {
+    if (email === '' && password === '') {
       console.log("error")
 
       return
