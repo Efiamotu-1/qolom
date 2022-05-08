@@ -29,6 +29,7 @@ function Footer() {
             width='100px'
             height='70px'
             alt='...Logo'
+            class="m-auto"
             />
             <Typography paragraph>
             Talent is everywhere, but opportunity is not.
@@ -36,7 +37,7 @@ function Footer() {
 
             <Typography paragraph>
             Follow us on our journey to help you skip the hassle of queues 
-            and get what you want at the click of a button connect
+            and get what you want at the click of a button connect with us via our socials
             </Typography>
             <Box sx={{width : 300, display : 'flex', justifyContent : 'space-between'}}>
                 <Facebook sx={{width : '50px', height: '50px', background : '#3b82f6', borderRadius : 2}}/>
