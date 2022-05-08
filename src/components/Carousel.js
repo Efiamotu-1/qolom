@@ -2,8 +2,9 @@ import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import  { Carousel }  from 'react-bootstrap'
 // import atmQueue from '../assests/images/atm-queue-.jpg'
-import covidQueue from '../assests/images/covid-queue.jpg'
+// import covidQueue from '../assests/images/covid-queue.jpg'
 // import patienceQueue from '../assests/images/patience-queue.jpg'
+   import Bunny from '../assests/images/carousel.jpg'
 
 
 let useStyles = makeStyles({
@@ -32,7 +33,7 @@ function Carousels() {
       <div className={classes.opacity}>
 <img
         className="d-block w-100"
-        src={covidQueue}
+        src={Bunny}
         alt="First slide"
       />
       </div>
@@ -46,7 +47,7 @@ function Carousels() {
     <Carousel.Item interval={1500}> 
       <img
         className="d-block w-100"
-        src={covidQueue}
+        src={Bunny}
         alt="Second slide"
       />
   
@@ -58,7 +59,7 @@ function Carousels() {
     <Carousel.Item interval={1500}> 
       <img
         className="d-block w-100"
-        src={covidQueue}
+        src={Bunny}
         alt="Third slide"
       />
   
