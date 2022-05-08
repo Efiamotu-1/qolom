@@ -4,13 +4,16 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core";
 import Logo from "../assests/images/logo-mock-removebg-preview.png";
 import Carousels from "../components/Carousel";
+import Footer from "../components/Footer";
+
 import { Button, Grid, Avatar } from "@mui/material";
-import { ExpandMoreIcon, BusinessCenter } from "@mui/icons-material";
+import { ExpandMoreIcon, BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
 import {Typography } from '@mui/material'
+// background: "linear-gradient(to left ,#03001c, #1E3A8A);",
 
 let useStyles = makeStyles({
   layoutBackground: {
-    background: "linear-gradient(to left, #1E3A8A,#03001c);",
+    background: "linear-gradient(to bottom ,#0891b2, #0369a1, #1E3A8A, #1e3a8a, #03001c);",
   },
   hover: {
     "&:hover": {
@@ -18,6 +21,9 @@ let useStyles = makeStyles({
       color: "white",
       // background : 'lightblue'
     },
+  },
+  opacity : {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)'
   },
 });
 
@@ -27,7 +33,7 @@ function LandingPage() {
   return (
     <div className={classes.layoutBackground}>
       <Navbar collapseOnSelect expand="lg" variant="dark">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" >
           <img src={Logo} alt="../" width="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,9 +46,9 @@ function LandingPage() {
               Home
             </Nav.Link>
 
-            <Nav.Link href="/login">Log In</Nav.Link>
+            <Nav.Link href="/login" className={classes.hover}>Log In</Nav.Link>
 
-            <Nav.Link eventKey={2} href="/register">
+            <Nav.Link eventKey={2} href="/register" className={classes.hover}>
               Sign Up
             </Nav.Link>
           </Nav>
@@ -51,10 +57,10 @@ function LandingPage() {
 
       <Carousels />
 
-      <Grid container spacing={4} sx={{color : 'white', display : 'flex', justifyContent : 'center', my : 5}}>
+      <Grid container spacing={4} sx={{color : 'white', display : 'flex', justifyContent : 'center', py : 20}}>
         <Grid item xs={12} md={3} lg={3}>
           <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 
-           <BusinessCenter />
+           <TimerTwoTone />
          </Avatar>
          
           <Typography variant="h4" align="center">Save Time</Typography>
@@ -77,7 +83,7 @@ function LandingPage() {
 
         <Grid item xs={12} md={3} lg={3}>
         <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 
-           <BusinessCenter />
+           <People />
          </Avatar>
           <Typography variant="h4" align="center">
             Control Your Queue
@@ -89,6 +95,8 @@ function LandingPage() {
           </Typography>
         </Grid>
       </Grid>
+
+      <Footer />
     </div>
   );
 }

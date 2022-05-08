@@ -1,19 +1,42 @@
+import { makeStyles } from '@material-ui/core'
 import React from 'react'
-import  { CarouselItem, Carousel }  from 'react-bootstrap'
-import atmQueue from '../assests/images/atm-queue-.jpg'
+import  { Carousel }  from 'react-bootstrap'
+// import atmQueue from '../assests/images/atm-queue-.jpg'
 import covidQueue from '../assests/images/covid-queue.jpg'
-import patienceQueue from '../assests/images/patience-queue.jpg'
+// import patienceQueue from '../assests/images/patience-queue.jpg'
 
+
+let useStyles = makeStyles({
+  layoutBackground: {
+    background: "linear-gradient(to bottom ,#0891b2, #0369a1, #1E3A8A, #1e3a8a, #03001c);",
+  },
+  hover: {
+    "&:hover": {
+      fontSize: 18,
+      color: "white",
+      // background : 'lightblue'
+    },
+  },
+  opacity : {
+    background: 'black'
+  },
+});
 
 function Carousels() {
+
+  const classes = useStyles()
+
   return (
     <Carousel fade variant="dark" controls={false} indicators={false}>
     <Carousel.Item interval={1000}>
-      <img
+      <div className={classes.opacity}>
+<img
         className="d-block w-100"
-        src={atmQueue}
+        src={covidQueue}
         alt="First slide"
       />
+      </div>
+      
       <Carousel.Caption 
       >
         <h3>Queue virtually</h3>
@@ -23,7 +46,7 @@ function Carousels() {
     <Carousel.Item interval={1000}> 
       <img
         className="d-block w-100"
-        src={atmQueue}
+        src={covidQueue}
         alt="Second slide"
       />
   
@@ -35,7 +58,7 @@ function Carousels() {
     <Carousel.Item interval={1000}> 
       <img
         className="d-block w-100"
-        src={atmQueue}
+        src={covidQueue}
         alt="Third slide"
       />
   

@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
-import {Card, CardContent, Typography, CardActions, Button, Toolbar, TextField, Grid} from '@mui/material'
+import {Card, CardContent, Typography, CardActions, Button, Toolbar, TextField, Grid, Link} from '@mui/material'
 import { ChevronLeft } from '@mui/icons-material'
 
 function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [emailError, setEmailError] = useState(false)
-  const [passwordError, setPasswordError] = useState(false) 
 
 
 
@@ -91,6 +89,10 @@ function Login() {
       <Typography paragraph sx={{ml:2}}>
           Don't have an account? <Button variant='text' href="/register" sx={{textTransform : 'lowercase', ml : -1}}>Sign Up</Button> 
       </Typography>
+
+       <Typography sx={{ml:12}}>OR</Typography>
+
+      <Link href="/admin/register" underline="hover" sx={{ml:2}}>Register as a business</Link>
         {/* <br/> */}
     </Card>
     </Grid>
