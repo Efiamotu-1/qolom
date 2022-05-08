@@ -23,7 +23,7 @@ function Footer() {
 
 
     <Grid container spacing={2} sx={{ background : '#a8a29e', color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 20}}>
-  <Grid item xs={12} md={4} lg={4} sx={{mx : 5, mb : 4 }}>
+  <Grid item xs={12} md={4} lg={4} sx={{ml : 5, mb : 4 }}>
   <img 
             src={Logo}
             width='100px'
@@ -47,7 +47,7 @@ function Footer() {
             
   </Grid>
 
-  <Grid item xs={12} md={3} lg={3} sx={{mx : 5, mb : 4}}>
+  <Grid item xs={12} md={3} lg={3} sx={{ml : 5, mb : 4}}>
   <Typography variant="h4" color="#93c5fd"> Company </Typography>
            <Typography variant="h6" className={classes.hoverlink}>Home</Typography>
            <Typography variant="h6" className={classes.hoverlink}>Contact</Typography>
@@ -56,7 +56,7 @@ function Footer() {
            <Typography variant="h6" className={classes.hoverlink}>Sign Up(Business)</Typography>
            <Typography variant="h6" className={classes.hoverlink}>Forgot Password</Typography>
  </Grid>
-  <Grid item xs={12} md={3} lg={3} sx={{mx : 5, }}>
+  <Grid item xs={12} md={3} lg={3} sx={{ml : 5, }}>
   <Typography variant="h4" color="#93c5fd">Location</Typography>
     <Typography paragraph>
     Qolom Ltd
@@ -68,7 +68,7 @@ function Footer() {
     </Typography>
   </Grid>
 
-  <Grid container sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 5,}}>
+  <Box sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 5,}}>
     <Box>
     <Link href="#" variant='h6' underline="hover" color="white" >
   Terms of use
@@ -83,7 +83,7 @@ function Footer() {
 
     <Typography variant='h6' align='center'>All rights reserved</Typography>
  
-  </Grid>
+  </Box>
 
 </Grid>
   )
