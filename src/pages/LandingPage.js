@@ -34,7 +34,7 @@ function LandingPage() {
   return (
     <div className={classes.layoutBackground}>
       <Navbar collapseOnSelect expand="lg" variant="dark">
-        <Navbar.Brand href="#home" >
+        <Navbar.Brand href="#home" class="ms-3">
           <img src={Logo} alt="../" width="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -42,7 +42,7 @@ function LandingPage() {
           <Nav className="me-auto">
             {/* <Nav.Link href="/">Home</Nav.Link> */}
           </Nav>
-          <Nav className="mx-3">
+          <Nav className="mx-5">
             <Nav.Link href="/" className={classes.hover}>
               Home
             </Nav.Link>

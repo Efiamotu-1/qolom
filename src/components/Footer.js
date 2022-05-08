@@ -40,10 +40,10 @@ function Footer() {
             and get what you want at the click of a button connect with us via our socials
             </Typography>
             <Box sx={{width : 300, display : 'flex', justifyContent : 'space-between'}}>
-                <Facebook sx={{width : '50px', height: '50px', background : '#3b82f6', borderRadius : 2}}/>
-                <Instagram sx={{width : '50px', height: '50px', background : 'linear-gradient(to left ,#8a3ab9, #e95950, #bc2a8d, #fccc63, #fbad50, #cd486b, #4c68d7);', borderRadius : 2}}/>
-                <Twitter sx={{width : '50px', height: '50px', background : '#60a5fa', borderRadius : 2}}/>
-                <YouTube sx={{width : '50px', height: '50px', background : 'red', borderRadius : 2}}/>
+                <Facebook sx={{width : '40px', height: '40px', background : '#3b82f6', borderRadius : 2}}/>
+                <Instagram sx={{width : '40px', height: '40px', background : 'linear-gradient(to left ,#8a3ab9, #e95950, #bc2a8d, #fccc63, #fbad50, #cd486b, #4c68d7);', borderRadius : 2}}/>
+                <Twitter sx={{width : '40px', height: '40px', background : '#60a5fa', borderRadius : 2}}/>
+                <YouTube sx={{width : '40px', height: '40px', background : 'red', borderRadius : 2}}/>
             </Box>
             
   </Grid>
@@ -59,7 +59,7 @@ function Footer() {
  </Grid>
   <Grid item xs={12} md={3} lg={3} sx={{ml : 5, }}>
   <Typography variant="h4" color="#93c5fd">Location</Typography>
-    <Typography paragraph sx={{width : 300}}>
+    <Typography variant='h6' sx={{width : 300}}>
     Qolom Ltd
     K55/56, Ikota Complex,
     Victoria Garden City,
