@@ -12,24 +12,24 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // setEmailError(false)
-    // setPasswordError(false)
-    // if (email == '' && password == '') {
-    //   setEmailError(true)
-    //   setPasswordError(true)
+    setEmailError(false)
+    setPasswordError(false)
+    if (email == '' && password == '') {
+      setEmailError(true)
+      setPasswordError(true)
 
-    //   alert('please fill all fields')
-    //   return
-    // }
-    // if (email === '') {
-    //   setEmailError(true)
-    //   alert('insert an email')
-    // }
+      alert('please fill all fields')
+      return
+    }
+    if (email === '') {
+      setEmailError(true)
+      alert('insert an email')
+    }
 
-    // if (password === '') {
-    //   setPasswordError(true)
-    //   alert('insert a password')
-    // }
+    if (password === '') {
+      setPasswordError(true)
+      alert('insert a password')
+    }
 
   }
 

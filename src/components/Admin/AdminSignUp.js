@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Grid, Toolbar, Button, Card, CardContent, Typography, TextField, CardActions, Box, } from '@mui/material'
 import {ChevronLeft} from '@mui/icons-material'
-import { makeStyles } from '@material-ui/core'
+// import { makeStyles } from '@material-ui/core'
 import CountrySelect from '../Selectors/CountrySelect';
 import StateSelect from '../Selectors/StateSelect';
 import AgeSelect from '../Selectors/AgeSelect';
@@ -9,21 +9,21 @@ import AgeSelect from '../Selectors/AgeSelect';
 
 
 
-const useStyles = makeStyles({
-    fill : {
-        width : '100%',
-        borderWidth : '100%',
-        borderRadius : 5,
-        background : 'red'
-    }
-})
+// const useStyles = makeStyles({
+//     fill : {
+//         width : '100%',
+//         borderWidth : '100%',
+//         borderRadius : 5,
+//         background : 'red'
+//     }
+// })
 
 export default function AdminSignUp() {
 
-    const [firstname, setFirstname] = useState('')
-    const [lastname, setLastname] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    // const [firstname, setFirstname] = useState('')
+    // const [lastname, setLastname] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
 
 
     const classes = useStyles()

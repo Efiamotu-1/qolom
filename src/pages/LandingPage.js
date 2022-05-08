@@ -1,13 +1,13 @@
 import React from "react";
 // import { Link } from 'react-router-dom'
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core";
 import Logo from "../assests/images/logo-mock-removebg-preview.png";
 import Carousels from "../components/Carousel";
 import Footer from "../components/Footer";
 
-import { Button, Grid, Avatar } from "@mui/material";
-import { ExpandMoreIcon, BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
+import { Grid, Avatar } from "@mui/material";
+import { BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
 import {Typography } from '@mui/material'
 // background: "linear-gradient(to left ,#03001c, #1E3A8A);",
 
