@@ -28,6 +28,7 @@ function Footer() {
             src={Logo}
             width='100px'
             height='70px'
+            alt='...Logo'"
             />
             <Typography paragraph>
             Talent is everywhere, but opportunity is not.

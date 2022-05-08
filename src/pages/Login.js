@@ -6,32 +6,27 @@ function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [emailError, setEmailError] = useState(false)
-  const [passwordError, setPasswordError] = useState(false)
-
+  
 
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    setEmailError(false)
-    setPasswordError(false)
+  
     if (email == '' && password == '') {
-      setEmailError(true)
-      setPasswordError(true)
+      console.log("error")
 
-      alert('please fill all fields')
       return
     }
     if (email === '') {
-      setEmailError(true)
-      alert('insert an email')
+      console.log("error")
+
     }
 
     if (password === '') {
-      setPasswordError(true)
-      alert('insert a password')
+      console.log("error")
+
     }
 
   }

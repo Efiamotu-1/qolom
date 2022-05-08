@@ -33,19 +33,19 @@ export default function AdminSignUp() {
     const handleSubmit = (e) => {
       e.preventDefault()
 
-      if (firstname == '') {
+      if (firstname === '') {
         console.log("empty")
       }
 
-      if (lastname == '') {
+      if (lastname === '') {
         console.log("empty")
       }
 
-      if (email == '') {
+      if (email === '') {
         console.log("empty")
       }
 
-      if (password == '') {
+      if (password === '') {
         console.log("empty")
       }
 
