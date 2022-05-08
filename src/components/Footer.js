@@ -35,7 +35,7 @@ function Footer() {
             Talent is everywhere, but opportunity is not.
             </Typography>
 
-            <Typography paragraph>
+            <Typography paragraph sx={{width : 300}}>
             Follow us on our journey to help you skip the hassle of queues 
             and get what you want at the click of a button connect with us via our socials
             </Typography>
@@ -59,7 +59,7 @@ function Footer() {
  </Grid>
   <Grid item xs={12} md={3} lg={3} sx={{ml : 5, }}>
   <Typography variant="h4" color="#93c5fd">Location</Typography>
-    <Typography paragraph>
+    <Typography paragraph sx={{width : 300}}>
     Qolom Ltd
     K55/56, Ikota Complex,
     Victoria Garden City,
