@@ -22,12 +22,12 @@ function Footer() {
   return (
 
 
-    <Grid container spacing={2} sx={{ color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 10}}>
+    <Grid container spacing={2} sx={{ color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 10, margin : 'auto'}}>
   <Grid item xs={12} md={4} lg={4} sx={{ mb : 4 }}>
   <img 
             src={Logo}
-            width='100px'
-            height='70px'
+            width='70px'
+            height='50px'
             alt='...Logo'
             class="m-auto"
             />
@@ -40,10 +40,10 @@ function Footer() {
             and get what you want at the click of a button connect with us via our socials
             </Typography>
             <Box sx={{width : 250, display : 'flex', justifyContent : 'space-between'}}>
-                <Facebook sx={{width : '40px', height: '40px', background : '#3b82f6', borderRadius : 2}}/>
-                <Instagram sx={{width : '40px', height: '40px', background : 'linear-gradient(to left ,#8a3ab9, #e95950, #bc2a8d, #fccc63, #fbad50, #cd486b, #4c68d7);', borderRadius : 2}}/>
-                <Twitter sx={{width : '40px', height: '40px', background : '#60a5fa', borderRadius : 2}}/>
-                <YouTube sx={{width : '40px', height: '40px', background : 'red', borderRadius : 2}}/>
+                <Facebook sx={{width : '40px', height: '40px', background : '#3b82f6', borderRadius : 1}}/>
+                <Instagram sx={{width : '40px', height: '40px', background : 'linear-gradient(to left ,#8a3ab9, #e95950, #bc2a8d, #fccc63, #fbad50, #cd486b, #4c68d7);', borderRadius : 1}}/>
+                <Twitter sx={{width : '40px', height: '40px', background : '#60a5fa', borderRadius : 1}}/>
+                <YouTube sx={{width : '40px', height: '40px', background : 'red', borderRadius : 1}}/>
             </Box>
             
   </Grid>

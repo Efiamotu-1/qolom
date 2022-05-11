@@ -6,14 +6,14 @@ import Logo from "../assests/images/logo-mock-removebg-preview.png";
 import Carousels from "../components/Carousel";
 import Footer from "../components/Footer";
 
-import { Grid, Avatar, Box } from "@mui/material";
+import { Grid, Avatar, Box, Link } from "@mui/material";
 import { BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
 import {Typography } from '@mui/material'
 // background: "linear-gradient(to left ,#03001c, #1E3A8A);",
 
 let useStyles = makeStyles({
   layoutBackground: {
-background: "linear-gradient(to left ,#03001c, #1E3A8A);",
+background: "linear-gradient(to top ,#78350f , rgb(139, 48, 48)  );",
 
   },
   hover: {
@@ -56,9 +56,12 @@ function LandingPage() {
         </Navbar.Collapse>
       </Navbar>
 
+      <Box sx={{width : '100%', height : 500}}>
       <Carousels />
 
-      <Grid container spacing={2} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'space-evenly', py : 15}}>
+      </Box>
+
+      <Grid container spacing={2} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'space-evenly', py : 10}}>
         <Grid item xs={12} md={4} lg={4} >
           <Box sx={{width : 300, margin : 'auto'}}>
           <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 
@@ -99,7 +102,7 @@ function LandingPage() {
           <Typography paragraph align="center">
             You can also create you own queue and have complete control over it.
             Set opening and closing time, send messages to people on the queue,
-            remove people, and many more
+            remove people, and many <Link href="/test">more</Link>
           </Typography>
           </Box>
         </Grid>

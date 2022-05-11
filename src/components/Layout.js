@@ -13,13 +13,14 @@ import BusinessHours from './Admin/BusinessHours';
 import CreateLine from './Admin/CreateLine';
 import EditProfile from './Admin/EditProfile';
 import ChangePassword from './Admin/ChangePassword'
+// import { withStyles } from '@material-ui/styles';
 
 
 const drawerWidth = 300;
 
 const useStyles = makeStyles({
   active: {
-      background: 'red',
+      backgroundColor: 'red',
       // color : 'green',
    
   },
@@ -44,8 +45,9 @@ whiteBg : {
    padding : 15,
    marginBottom : '20px'
 }
-
 })
+
+
 
 function ResponsiveDrawer(props) {
 
@@ -55,6 +57,7 @@ function ResponsiveDrawer(props) {
   const navigate = useNavigate();
   const location = useLocation();
   const classes = useStyles();
+  console.log()
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -69,7 +72,7 @@ function ResponsiveDrawer(props) {
   const drawerList = [
     {
       text : "Dashboard",
-      path : "",
+      path : "admin",
       index : 1,
       icon : <DashboardCustomize />
     },
@@ -102,7 +105,42 @@ function ResponsiveDrawer(props) {
     
   
   ]
-  
+  let style = { 
+    borderRadius : 3, ml: 2, mr : 2, width : 'auto',
+       '&:hover' : {
+      background : '#1F2937',
+     
+    }, 
+  };
+
+  const Comp = ({myStyle, list})=>{
+    return (<ListItem 
+      sx={myStyle}
+      key={list.index}
+      classes={{backgroundColor: 'red'} }
+      //  className={classes.active}
+       button
+      //  selected={list.path}
+      //  alignItems="flex-start"
+       onClick={()=> navigate(list.path)}
+      >
+        
+        <ListItemIcon 
+        className = {classes.white}
+        sx = {{color : 'white'}}
+        >
+          {list.icon} 
+        </ListItemIcon>
+       <ListItemText 
+      //  sx={{fontSize : 1}}
+       primary={list.text} 
+       sx = {{color : '#f4f4f4', ml : -3,}}
+
+       /> 
+      </ListItem>)
+  }
+
+  // const customStyle = 
   const drawer = (
 
       <>
@@ -127,39 +165,19 @@ function ResponsiveDrawer(props) {
           
 <Divider className={classes.divider}/>
       <List >
-        {drawerList.map((list) => (
-          <ListItem 
-          sx={{ borderRadius : 3, ml: 2, mr : 2, width : 'auto',
-             '&:hover' : {
-            background : '#1F2937',
-            '&:focus' : {
-              background : 'red',
-              color : 'yellow'
+        {drawerList.map((list, i) =>{
+          let myStyle = {};
+          console.log("/admin/"+list.path==location.pathname)
+            if(location.pathname === "/admin/"+list.path){
+              console.log(true);
+              myStyle = {...style, backgroundColor:'#1F2937', color : 'green'}
             }
-          }}}
-          key={list.index}
-          className={location.pathname === list.path ? classes.active : null}
-          //  className={classes.active}
-           button
-          //  selected={list.path}
-          //  alignItems="flex-start"
-           onClick={()=> navigate(list.path)}
-          >
-            <ListItemIcon 
-            className = {classes.white}
-            sx = {{color : 'white'}}
-            >
-              {list.icon} 
-            </ListItemIcon>
-           <ListItemText 
-          //  sx={{fontSize : 1}}
-           primary={list.text} 
-           sx = {{color : '#f4f4f4', ml : -3,}}
-
-           /> 
-          </ListItem>
-          
-        ))}
+            return (
+              <Comp list={list} key={i} myStyle={myStyle} />
+              
+            )
+        } 
+        )}
 
       </List>
       <Divider className={classes.divider}/>
@@ -238,7 +256,7 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar />
         <Routes>
-          <Route path="" element={<Home /> } />
+          <Route path="admin" element={<Home /> } />
           <Route path="businesshours" element={<BusinessHours /> } />
           <Route path="createline" element={<CreateLine /> } />
           <Route path="editprofile" element={<EditProfile /> } />

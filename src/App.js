@@ -7,6 +7,8 @@ import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import SignUp from './pages/UserSignUp';
 import AdminSignUp from './components/Admin/AdminSignUp'
+import Test from './components/test';
+import TestPage from './pages/TestPage';
 
 // import BusinessHours from './pages/BusinessHours'
 // import ChangePassword from './pages/ChangePassword'
@@ -33,6 +35,8 @@ export default function App() {
          <Route path="/login" element={<Login />} />
          <Route path="/register" element={<SignUp />} />
          <Route path="/admin/register" element={<AdminSignUp />} />
+         <Route path="/test" element={<TestPage />} />
+
 
 
 

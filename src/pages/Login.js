@@ -1,12 +1,26 @@
 import React, {useState} from 'react'
-import {Card, CardContent, Typography, CardActions, Button, Toolbar, TextField, Grid, Link} from '@mui/material'
-import { ChevronLeft } from '@mui/icons-material'
+import {useNavigate} from 'react-router-dom'
+import {Card, CardContent, Typography, CardActions, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput} from '@mui/material'
+import { ChevronLeft, Visibility, VisibilityOff } from '@mui/icons-material'
 
 function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+
+  const navigate= useNavigate()
   
+  const handleClickShowPassword = () => {
+    setShowPassword((prev) => !showPassword);
+  };
+
+
+  const handleChange = (e) => {
+   setPassword(e.target.value)
+
+  
+  }
 
 
 
@@ -14,10 +28,10 @@ function Login() {
     e.preventDefault()
 
   
-    if (email === '' && password === '') {
-      console.log("error")
+    if (email && password) {
+      navigate("register")
 
-      return
+      // return
     }
     if (email === '') {
       console.log("error")
@@ -29,12 +43,14 @@ function Login() {
 
     }
 
+
+
   }
 
   return (
       <Grid >
       <Toolbar />
-      <Toolbar />
+      {/* <Toolbar /> */}
 <Card sx={{ maxWidth: 550, margin : 'auto'}} elevation={10}>
       <CardContent>
 
@@ -58,23 +74,33 @@ function Login() {
        variant='outlined'
        color='primary' 
        fullWidth
-       required
        onChange= {(e) => { setEmail(e.target.value)}}
 
      />   
     <br/><br/>
 
     <br/>
-     <TextField 
-    //    sx={{width : 400}}
-       label='Password' 
-       variant='outlined'
-       type="password"
-       color='primary' 
-       fullWidth
-       required
-       onChange= {(e) => { setPassword(e.target.value)}}
-     />   
+    <FormControl sx={{ width: '100%' }} variant="outlined">
+    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+    <OutlinedInput
+      id="outlined-adornment-password"
+      type={showPassword ? 'text' : 'password'}
+      value={password}
+      onChange={handleChange}
+      label="Password"
+      endAdornment={
+        <InputAdornment position="end">
+          <IconButton
+            aria-label="toggle password visibility"
+            onClick={handleClickShowPassword}
+            edge="end"
+          >
+            {showPassword ? <VisibilityOff /> : <Visibility />}
+          </IconButton>
+        </InputAdornment>
+      }
+    />
+  </FormControl>
     <br/><br/>
 
     <CardActions>
@@ -84,14 +110,17 @@ function Login() {
       </form>
     </CardContent>
 
-      <Typography paragraph sx={{ml:2}}>
-          Don't have an account? <Button variant='text' href="/register" sx={{textTransform : 'lowercase', ml : -1}}>Sign Up</Button> 
+      <Typography paragraph sx={{ml:2}} align="center">
+          Don't have an account? <Link underline="hover" href="/register" >Sign Up</Link> 
       </Typography>
 
-       <Typography sx={{ml:12}}>OR</Typography>
+       <Typography  align="center">OR</Typography>
 
-      <Link href="/admin/register" underline="hover" sx={{ml:2}}>Register as a business</Link>
-        {/* <br/> */}
+      <Typography align="center">
+      <Link href="/admin/register" underline="hover" >Register as a business</Link>
+
+      </Typography>
+        <br/>
     </Card>
     </Grid>
   )
