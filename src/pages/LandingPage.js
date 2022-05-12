@@ -14,7 +14,7 @@ import {Typography } from '@mui/material'
 
 let useStyles = makeStyles({
   layoutBackground: {
-background: "#CBBAB0",
+background: "rgb(219, 217, 218)",
 
   },
   hover: {
@@ -27,6 +27,11 @@ background: "#CBBAB0",
   opacity : {
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
   },
+
+  white : {
+
+    color : 'white'
+  }
 });
 
 
@@ -66,13 +71,13 @@ function LandingPage() {
             {/* <Nav.Link href="/">Home</Nav.Link> */}
           </Nav>
           <Nav className="mx-5">
-            <Nav.Link href="/" className={classes.hover}>
+            <Nav.Link href="/" className={classes.hover} class="text-white">
               Home
             </Nav.Link>
 
-            <Nav.Link href="/login" className={classes.hover}>Log In</Nav.Link>
+            <Nav.Link href="/login" className={classes.hover} class="text-white">Log In</Nav.Link>
 
-            <Nav.Link eventKey={2} href="/register" className={classes.hover}>
+            <Nav.Link eventKey={2} href="/register" className={classes.hover} class="text-white">
               Sign Up
             </Nav.Link>
           </Nav>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core';
 import {Box, Grid, Link, Typography} from '@mui/material'
-// import Logo from '../assests/images/logo-mock-removebg-preview.png'
+import Logo from '../assests/images/logo-mock-removebg-preview.png'
 
 import { Facebook, Instagram, Twitter, YouTube } from '@mui/icons-material'
 
@@ -24,6 +24,15 @@ function Footer() {
 
 
     <Grid container spacing={2} sx={{color :'white', display : 'flex', justifyContent : 'center', py : 10}}>
+    
+    <Grid item xs={12} md={4} lg={4} sx={{marginLeft : 'auto', marginRight : 'auto'}}> 
+      <img 
+      src={Logo}
+      height = "100"
+      alt="...Logo"
+      />
+    </Grid>
+    
     <Grid item xs={12} md={4} lg={4} >
       <Box sx={{width : 300, margin : 'auto'}}>
       <Box sx={{marginLeft : 'auto', marginRight : 'auto'}}>
@@ -65,11 +74,11 @@ function Footer() {
             
    
       </Box>
-    </Grid>
 
-    <Grid item xs={12} md={4} lg={4}>
-    <Box sx={{width : 300, margin : 'auto'}}>
-    <Typography variant="h5">Location</Typography>
+ 
+
+    <Box sx={{width : 300, margin : 'auto', mt :2}}>
+    {/* <Typography variant="h5">Location</Typography> */}
    <Typography paragraph sx={{width : 300}}>
      Qolom Ltd
      K55/56, Ikota Complex,
