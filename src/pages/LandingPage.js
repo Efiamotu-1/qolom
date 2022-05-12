@@ -14,7 +14,7 @@ import {Typography } from '@mui/material'
 
 let useStyles = makeStyles({
   layoutBackground: {
-background: "linear-gradient(to top ,#78350f , rgb(139, 48, 48)  );",
+background: "#CBBAB0",
 
   },
   hover: {
@@ -47,7 +47,7 @@ function LandingPage() {
   };
 
   const opacity = {
-    backgroundColor : 'rgb(26, 25, 25, 0.5)',
+    backgroundColor : 'rgb(26, 25, 25, 0.4)',
     height : '700px',
     width : '100%',
     // margin : -2,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core';
 import {Box, Grid, Link, Typography} from '@mui/material'
-import Logo from '../assests/images/logo-mock-removebg-preview.png'
+// import Logo from '../assests/images/logo-mock-removebg-preview.png'
 
 import { Facebook, Instagram, Twitter, YouTube } from '@mui/icons-material'
 
@@ -28,12 +28,12 @@ function Footer() {
       <Box sx={{width : 300, margin : 'auto'}}>
       <Box sx={{marginLeft : 'auto', marginRight : 'auto'}}>
 
-       <img src={Logo} alt="...Logo" style={{ width : '70px', height : '50px'}}/>
+       {/* <img src={Logo} alt="...Logo" style={{ width : '70px', height : '50px'}}/> */}
 
        </Box>
   
 
-             <Typography variant="h6" align="center" sx={{width : 250, mb : 1, mt : -1}}>
+             <Typography paragraph align="center" sx={{width : 250, mb : 1}}>
              Follow us on our journey to help you skip the hassle of queues 
              and get what you want at the click of a button connect with us via our socials
              </Typography>
@@ -49,21 +49,21 @@ function Footer() {
 
     <Grid item xs={12} md={4} lg={4} >
     <Box sx={{width : 300, margin : 'auto'}}>
-    <Typography variant="h4" color="#93c5fd"> Company </Typography>
-          <Typography variant="h6" className={classes.hoverlink}>Home</Typography>
-            <Typography variant="h6" className={classes.hoverlink}>Contact</Typography>
-            <Typography variant="h6" className={classes.hoverlink}>Sign In</Typography>
-            <Typography variant="h6" className={classes.hoverlink}>Sign Up</Typography>
-            <Typography variant="h6" className={classes.hoverlink}>Sign Up(Business)</Typography>
-            <Typography variant="h6" className={classes.hoverlink}>Forgot Password</Typography>
+    <Typography variant="h5" color="#93c5fd"> Company </Typography>
+          <Typography paragraph className={classes.hoverlink}>Home</Typography>
+            <Typography paragraph className={classes.hoverlink}>Contact</Typography>
+            <Typography paragraph className={classes.hoverlink}>Sign In</Typography>
+            <Typography paragraph className={classes.hoverlink}>Sign Up</Typography>
+            <Typography paragraph className={classes.hoverlink}>Sign Up(Business)</Typography>
+            <Typography paragraph className={classes.hoverlink}>Forgot Password</Typography>
    
       </Box>
     </Grid>
 
     <Grid item xs={12} md={4} lg={4}>
     <Box sx={{width : 300, margin : 'auto'}}>
-    <Typography variant="h4" color="#93c5fd">Location</Typography>
-   <Typography variant='h6' sx={{width : 300}}>
+    <Typography variant="h5" color="#93c5fd">Location</Typography>
+   <Typography paragraph sx={{width : 300}}>
      Qolom Ltd
      K55/56, Ikota Complex,
      Victoria Garden City,
