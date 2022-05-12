@@ -48,7 +48,7 @@ function LandingPage() {
 
   const opacity = {
     backgroundColor : 'rgb(26, 25, 25, 0.5)',
-    height : '600px',
+    height : '700px',
     width : '100%',
     // margin : -2,
     // padding : -2

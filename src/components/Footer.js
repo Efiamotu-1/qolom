@@ -28,7 +28,7 @@ function Footer() {
       <Box sx={{width : 300, margin : 'auto'}}>
       <Box sx={{marginLeft : 'auto', marginRight : 'auto'}}>
 
-       <img src={Logo} style={{ width : '70px', height : '50px'}}/>
+       <img src={Logo} alt="...Logo" style={{ width : '70px', height : '50px'}}/>
 
        </Box>
   
