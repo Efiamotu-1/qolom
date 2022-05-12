@@ -57,7 +57,7 @@
 // export default Carousels
 
 import React from "react";
-import Bunny from "../assests/images/carousel.jpg";
+// import Bunny from "../assests/images/carousel.jpg";
 
 function Carousels() {
   return (

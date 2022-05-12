@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core';
-import {Box, Grid, Link, Typography, Avatar} from '@mui/material'
+import {Box, Grid, Link, Typography} from '@mui/material'
 import Logo from '../assests/images/logo-mock-removebg-preview.png'
 
 import { Facebook, Instagram, Twitter, YouTube } from '@mui/icons-material'

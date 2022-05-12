@@ -167,7 +167,7 @@ function ResponsiveDrawer(props) {
       <List >
         {drawerList.map((list, i) =>{
           let myStyle = {};
-          console.log("/admin/"+list.path==location.pathname)
+          console.log("/admin/"+list.path===location.pathname)
             if(location.pathname === "/admin/"+list.path){
               console.log(true);
               myStyle = {...style, backgroundColor:'#1F2937', color : 'green'}
