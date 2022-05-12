@@ -66,33 +66,12 @@ function Carousels() {
 
       <div
         id="carouselExampleCaptions"
-        class="carousel slide"
+        class="carousel slide d-flex align-items-center"
         data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
+     
         <div class="carousel-inner">
-          <div class="carousel-item active" >
+          <div class="carousel-item active text-white" >
             <h1 class="text-center">Queue virtually </h1>
 
             <div class="d-flex justify-content-center ">
@@ -101,9 +80,9 @@ function Carousels() {
               </h5>
             </div>
 
-            <br />
+            {/* <br /> */}
           </div>
-          <div class="carousel-item" >
+          <div class="carousel-item text-white" >
             <h1 class="text-center">Create your line</h1>
             <div class="d-flex justify-content-center ">
               <h5 class="inner-carousel-width text-center">
@@ -111,34 +90,17 @@ function Carousels() {
               </h5>
             </div>
           </div>
-          <div class="carousel-item" >
+          <div class="carousel-item text-white" >
             <h1 class="text-center">Make Orders</h1>
             <div class="d-flex justify-content-center ">
               <h5 class="inner-carousel-width text-center">
                 Skip queues entirely. Just order and pick up
               </h5>
             </div>
-            <br />
+            {/* <br /> */}
           </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        
       </div>
     </>
   );

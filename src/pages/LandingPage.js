@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core";
 import Logo from "../assests/images/logo-mock-removebg-preview.png";
 import Carousels from "../components/Carousel";
 import Footer from "../components/Footer";
+import Bunny from '../assests/images/carousel.jpg'
 
 import { Grid, Avatar, Box, Link } from "@mui/material";
 import { BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
@@ -28,8 +29,30 @@ background: "linear-gradient(to top ,#78350f , rgb(139, 48, 48)  );",
   },
 });
 
+
 function LandingPage() {
   const classes = useStyles();
+
+  const mystyle = {
+    backgroundImage: `url(${Bunny})`,
+    backgroundSize : 'cover',
+    backgroundRepeat : 'no-repeat',
+    backgroundPosition : 'center',
+    // color: "white",
+    maxWidth : '100%',
+    height : 'auto',
+    // backgroundColor: "DodgerBlue",
+    // padding: "10px",
+    // fontFamily: "Arial"
+  };
+
+  const opacity = {
+    backgroundColor : 'rgb(26, 25, 25, 0.5)',
+    height : '600px',
+    width : '100%',
+    // margin : -2,
+    // padding : -2
+  }
 
   return (
     <div className={classes.layoutBackground}>
@@ -56,10 +79,16 @@ function LandingPage() {
         </Navbar.Collapse>
       </Navbar>
 
-      <Box sx={{width : '100%', height : 500}}>
-      <Carousels />
-
-      </Box>
+      <div class="m-auto" style={mystyle} >
+      <div class="d-flex align-items-center" style={opacity}>
+        <div
+          class="m-auto text-white d-flex flex-column align-items-center"
+          // style={{}}
+        >
+          <Carousels />
+        </div>
+      </div>
+    </div>
 
       <Grid container spacing={2} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'space-evenly', py : 10}}>
         <Grid item xs={12} md={4} lg={4} >
