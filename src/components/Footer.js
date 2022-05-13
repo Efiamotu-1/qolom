@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import {Box, Grid, Link, Typography} from '@mui/material'
 // import Logo from '../assests/images/logo-mock-removebg-preview.png'
 
-import { Facebook, FacebookOutlined, Instagram, Twitter, YouTube, YoutubeSearchedForOutlined } from '@mui/icons-material'
+import { Facebook, Instagram, Twitter, YouTube, } from '@mui/icons-material'
 
 
 const usesStyles = makeStyles({
@@ -20,18 +20,12 @@ function Footer() {
 
   const classes = usesStyles()
 
-  const opacity = {
-    backgroundColor : 'rgb(26, 25, 25, 0.4)',
-    height : '600px',
-    width : '100%',
-    // margin : -2,
-    // padding : -2
-  }
+  
 
   return (
 
 
-    <Grid container spacing={2} sx={{background: 'rgb(26, 25, 25, 0.5)', display : 'flex', justifyContent : 'start', py : 8}}>
+    <Grid container spacing={2} sx={{background: 'rgb(26, 25, 25, 0.5)', color : 'white', display : 'flex', justifyContent : 'start', py : 8}}>
 
     <Grid item xs={12} md={4} lg={4} >
       <Box sx={{width : 200, margin : 'auto'}}>
@@ -59,17 +53,17 @@ function Footer() {
     <Grid item xs={5} md={4} lg={4} >
     <Box sx={{width : 200, margin : 'auto', paddingLeft : 2}}>
     <Typography variant="h5"> Company </Typography>
-          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Home</Link>
+          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Home</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Contact</Link>
+          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Contact</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Sign In</Link>
+          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign In</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Sign Up</Link>
+          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign Up</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Sign UP(Business)</Link>
+          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign UP(Business)</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Forgot Password</Link>
+          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Forgot Password</Link>
 
             
    
@@ -98,15 +92,14 @@ function Footer() {
 
     <Box sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 10}}>
    <Box>
-   <Link href="#" variant='h6' underline="hover" color="black" >
+   <Link href="#" paragraph underline="hover" color="white" >
    Terms of use
- </Link>
- <Link href="#" variant='h6' underline="hover" color="black" sx={{ml : 2}}>
+   paragra underline="hover" color="white" sx={{ml : 2}}>
      Privacy policy
  </Link>
      </Box>
-     <Typography variant='h6'>Copyright &copy; 2022 Qolom Ltd</Typography>
-     <Typography variant='h6' align='center'>All rights reserved</Typography>
+     <Typography paragraph>Copyright &copy; 2022 Qolom Ltd</Typography>
+     <Typography paaragraph align='center'>All rights reserved</Typography>
 
    </Box>
     </Grid>
