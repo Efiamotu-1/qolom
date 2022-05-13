@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import {Box, Grid, Link, Typography} from '@mui/material'
 // import Logo from '../assests/images/logo-mock-removebg-preview.png'
 
-import { Facebook, Instagram, Twitter, YouTube, } from '@mui/icons-material'
+import { Facebook,  Instagram, Twitter, YouTube } from '@mui/icons-material'
 
 
 const usesStyles = makeStyles({
@@ -20,7 +20,6 @@ function Footer() {
 
   const classes = usesStyles()
 
-  
 
   return (
 
@@ -94,12 +93,13 @@ function Footer() {
    <Box>
    <Link href="#" paragraph underline="hover" color="white" >
    Terms of use
-   paragra underline="hover" color="white" sx={{ml : 2}}>
+ </Link>
+ <Link href="#" paragraph underline="hover" color="white" sx={{ml : 2}}>
      Privacy policy
  </Link>
      </Box>
      <Typography paragraph>Copyright &copy; 2022 Qolom Ltd</Typography>
-     <Typography paaragraph align='center'>All rights reserved</Typography>
+     <Typography paragraph align='center'>All rights reserved</Typography>
 
    </Box>
     </Grid>
