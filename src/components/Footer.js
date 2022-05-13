@@ -49,28 +49,42 @@ function Footer() {
       </Box>
     </Grid>
 
-    <Grid item xs={5} md={4} lg={4} >
-    <Box sx={{width : 200, margin : 'auto', paddingLeft : 2}}>
-    <Typography variant="h5"> Company </Typography>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Home</Link>
-    <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Contact</Link>
-    <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign In</Link>
-    <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign Up</Link>
-    <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign UP(Business)</Link>
-    <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Forgot Password</Link>
+    <Grid item xs={6} md={4} lg={4} >
+    <Box sx={{width : '100%', margin : 'auto', paddingLeft : 2}}>
+    <Typography variant="h5" align='center'> Company </Typography>
+    <Typography align="center">
+    <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Contact</Link>
+
+    </Typography>
+
+    <Typography align="center">
+    <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign In</Link>
+
+</Typography>
+
+<Typography align="center">
+<Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign Up</Link>
+
+</Typography>
+
+<Typography align="center">
+<Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign UP(Business)</Link>
+
+</Typography>
+
+<Typography align="center">
+<Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Forgot Password</Link>
+
+</Typography>
+
 
             
    
       </Box>
     </Grid>
 
-    <Grid item xs={5} md={4} lg={4}>
-    <Box sx={{width : 100, }}>
+    <Grid item xs={6} md={4} lg={4}>
+    <Box sx={{width : '100%', margin: 'auto' }}>
     <Typography variant="h5" >Location</Typography>
    <Typography paragraph sx={{width : 200}}>
      Qolom Ltd
@@ -98,8 +112,9 @@ function Footer() {
      Privacy policy
  </Link>
      </Box>
+     
      <Typography paragraph>Copyright &copy; 2022 Qolom Ltd</Typography>
-     <Typography paragraph align='center'>All rights reserved</Typography>
+     <Typography paragraph align='center' sx={{mt:-2}}>All rights reserved</Typography>
 
    </Box>
     </Grid>

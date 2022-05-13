@@ -44,7 +44,7 @@ function LandingPage() {
     backgroundImage: `url(${Bunny})`,
     backgroundSize : 'cover',
     backgroundRepeat : 'no-repeat',
-    backgroundPosition : 'right',
+    backgroundPosition : '85% 70%, 20px 30px',
     // color: "white",
     width : '100%',
     // objectFit : 'cover',
