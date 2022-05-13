@@ -14,23 +14,25 @@ import {Typography } from '@mui/material'
 
 let useStyles = makeStyles({
   layoutBackground: {
-background: "rgb(219, 217, 218)",
+// background: "rgb(219, 217, 218)",
 
   },
   hover: {
     "&:hover": {
       fontSize: 18,
       color: "white",
-      // background : 'lightblue'
+      // background : '#71717a',
+     
+
     },
   },
   opacity : {
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
   },
 
-  white : {
+  spacing : {
 
-    color : 'white'
+    marginRight : 40
   }
 });
 
@@ -42,18 +44,21 @@ function LandingPage() {
     backgroundImage: `url(${Bunny})`,
     backgroundSize : 'cover',
     backgroundRepeat : 'no-repeat',
-    backgroundPosition : 'center',
+    backgroundPosition : 'right',
     // color: "white",
-    maxWidth : '100%',
-    height : 'auto',
+    width : '100%',
+    // objectFit : 'cover',
+    // height : 'auto',
     // backgroundColor: "DodgerBlue",
     // padding: "10px",
     // fontFamily: "Arial"
   };
 
+ 
+
   const opacity = {
     backgroundColor : 'rgb(26, 25, 25, 0.4)',
-    height : '700px',
+    height : '600px',
     width : '100%',
     // margin : -2,
     // padding : -2
@@ -61,8 +66,12 @@ function LandingPage() {
 
   return (
     <div className={classes.layoutBackground}>
-      <Navbar collapseOnSelect expand="lg" variant="dark">
-        <Navbar.Brand href="#home" class="ms-3">
+   
+
+      <div class="m-auto" style={mystyle} >
+      <div class="d-flex align-items-center flex-column" style={opacity}>
+      <Navbar collapseOnSelect expand="lg" style={{width : '100%'}}>
+        <Navbar.Brand href="#home" class="ms-4">
           <img src={Logo} alt="../" width="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -71,21 +80,18 @@ function LandingPage() {
             {/* <Nav.Link href="/">Home</Nav.Link> */}
           </Nav>
           <Nav className="mx-5">
-            <Nav.Link href="/" className={classes.hover} class="text-white">
+            <Nav.Link href="/" className={`${classes.hover} ${classes.spacing}`} >
               Home
             </Nav.Link>
 
-            <Nav.Link href="/login" className={classes.hover} class="text-white">Log In</Nav.Link>
+            <Nav.Link href="/login" className={`${classes.hover} ${classes.spacing}`} >Log In</Nav.Link>
 
-            <Nav.Link eventKey={2} href="/register" className={classes.hover} class="text-white">
+            <Nav.Link eventKey={2} href="/register" className={classes.hover}>
               Sign Up
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-
-      <div class="m-auto" style={mystyle} >
-      <div class="d-flex align-items-center" style={opacity}>
         <div
           class="m-auto text-white d-flex flex-column align-items-center"
           // style={{}}

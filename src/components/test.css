@@ -1,23 +1,19 @@
 .about-us-img{
-    background-image: url(../assests/images/carousel.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* object-fit: cover; */
-    max-width: 100%;
-    /* height : 500px */
-    /* width: auto; */
+  background-image: url(../assests//images/carousel.jpg);
+  background-size : cover;
+  background-repeat : no-repeat;
+  /* background-position : right; */
+  width : 100%;
+    
   }
 @media only screen and (min-width:320px) and (max-width:1128px){
     .about-us-img{
-        background-image: url(../assests/images/carousel.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        /* object-fit: cover; */
-        max-width: 100%;
-        height : auto
-        /* width: auto; */
+      background-image: url(../assests//images/carousel.jpg);
+      background-size : cover;
+      background-repeat : no-repeat;
+      background-position : right;
+      width : 100%;
+       
       }
   }
 

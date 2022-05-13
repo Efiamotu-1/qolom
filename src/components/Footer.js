@@ -1,9 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core';
 import {Box, Grid, Link, Typography} from '@mui/material'
-import Logo from '../assests/images/logo-mock-removebg-preview.png'
+// import Logo from '../assests/images/logo-mock-removebg-preview.png'
 
-import { Facebook, Instagram, Twitter, YouTube } from '@mui/icons-material'
+import { Facebook, FacebookOutlined, Instagram, Twitter, YouTube, YoutubeSearchedForOutlined } from '@mui/icons-material'
 
 
 const usesStyles = makeStyles({
@@ -20,21 +20,21 @@ function Footer() {
 
   const classes = usesStyles()
 
+  const opacity = {
+    backgroundColor : 'rgb(26, 25, 25, 0.4)',
+    height : '600px',
+    width : '100%',
+    // margin : -2,
+    // padding : -2
+  }
+
   return (
 
 
-    <Grid container spacing={2} sx={{color :'white', display : 'flex', justifyContent : 'center', py : 10}}>
-    
-    <Grid item xs={12} md={4} lg={4} sx={{marginLeft : 'auto', marginRight : 'auto'}}> 
-      <img 
-      src={Logo}
-      height = "100"
-      alt="...Logo"
-      />
-    </Grid>
-    
+    <Grid container spacing={2} sx={{background: 'rgb(26, 25, 25, 0.5)', display : 'flex', justifyContent : 'start', py : 8}}>
+
     <Grid item xs={12} md={4} lg={4} >
-      <Box sx={{width : 300, margin : 'auto'}}>
+      <Box sx={{width : 200, margin : 'auto'}}>
       <Box sx={{marginLeft : 'auto', marginRight : 'auto'}}>
 
        {/* <img src={Logo} alt="...Logo" style={{ width : '70px', height : '50px'}}/> */}
@@ -46,40 +46,40 @@ function Footer() {
              Follow us on our journey to help you skip the hassle of queues 
              and get what you want at the click of a button connect with us via our socials
              </Typography>
-             <Box sx={{width : 250, display : 'flex', justifyContent : 'space-between'}}>
-                 <Facebook sx={{width : '40px', height: '40px', background : '#3b82f6', borderRadius : 1}}/>
-                 <Instagram sx={{width : '40px', height: '40px', background : 'linear-gradient(to left ,#8a3ab9, #e95950, #bc2a8d, #fccc63, #fbad50, #cd486b, #4c68d7);', borderRadius : 1}}/>
-                 <Twitter sx={{width : '40px', height: '40px', background : '#60a5fa', borderRadius : 1}}/>
-                 <YouTube sx={{width : '40px', height: '40px', background : 'red', borderRadius : 1}}/>
+             <Box sx={{width : 250, display : 'flex', justifyContent : 'space-around', mb : 2,}}>
+                 <Facebook sx={{width : '30px', height: '30px'}}/>
+                 <Instagram sx={{width : '30px', height: '30px'}}/>
+                 <Twitter sx={{width : '30px', height: '30px'}}/>
+                 <YouTube sx={{width : '30px', height: '30px'}}/>
             </Box>
  
       </Box>
     </Grid>
 
-    <Grid item xs={12} md={4} lg={4} >
-    <Box sx={{width : 300, margin : 'auto'}}>
+    <Grid item xs={5} md={4} lg={4} >
+    <Box sx={{width : 200, margin : 'auto', paddingLeft : 2}}>
     <Typography variant="h5"> Company </Typography>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Home</Link>
+          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Home</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Contact</Link>
+          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Contact</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign In</Link>
+          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Sign In</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign Up</Link>
+          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Sign Up</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Sign UP(Business)</Link>
+          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Sign UP(Business)</Link>
     <br/>
-          <Link href="/" underline='hover' paragraph color="white" className={classes.hoverlink}>Forgot Pawword</Link>
+          <Link href="/" underline='hover' paragraph color="black" className={classes.hoverlink}>Forgot Password</Link>
 
             
    
       </Box>
+    </Grid>
 
- 
-
-    <Box sx={{width : 300, margin : 'auto', mt :2}}>
-    {/* <Typography variant="h5">Location</Typography> */}
-   <Typography paragraph sx={{width : 300}}>
+    <Grid item xs={5} md={4} lg={4}>
+    <Box sx={{width : 100, }}>
+    <Typography variant="h5" >Location</Typography>
+   <Typography paragraph sx={{width : 200}}>
      Qolom Ltd
      K55/56, Ikota Complex,
      Victoria Garden City,
@@ -93,12 +93,15 @@ function Footer() {
     </Grid>
 
     <Grid>
+
+  </Grid>
+
     <Box sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 10}}>
    <Box>
-   <Link href="#" variant='h6' underline="hover" color="white" >
+   <Link href="#" variant='h6' underline="hover" color="black" >
    Terms of use
  </Link>
- <Link href="#" variant='h6' underline="hover" color="white" sx={{ml : 2}}>
+ <Link href="#" variant='h6' underline="hover" color="black" sx={{ml : 2}}>
      Privacy policy
  </Link>
      </Box>
@@ -107,7 +110,7 @@ function Footer() {
 
    </Box>
     </Grid>
-  </Grid>
+
 
 //     <Grid container spacing={2} sx={{ color : 'white', display : 'flex', justifyContent : 'center', pt : 5, pb : 10, margin : 'auto'}}>
 //   <Grid item xs={12} md={4} lg={4} sx={{ mb : 4 }}>
