@@ -103,7 +103,7 @@ function Footer() {
 
   </Grid>
 
-    <Box sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 10}}>
+    <Box sx={{display : 'flex', flexDirection : 'column', margin : 'auto', mt : 5}}>
    <Box>
    <Link href="#" paragraph underline="hover" color="white" >
    Terms of use
