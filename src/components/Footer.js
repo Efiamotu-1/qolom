@@ -35,11 +35,11 @@ function Footer() {
        </Box>
   
 
-             <Typography paragraph align="center" sx={{width : 250, mb : 1}}>
+             <Typography paragraph align="center" sx={{width : '100%', mb : 1}}>
              Follow us on our journey to help you skip the hassle of queues 
              and get what you want at the click of a button connect with us via our socials
              </Typography>
-             <Box sx={{width : 250, display : 'flex', justifyContent : 'space-around', mb : 2,}}>
+             <Box sx={{width : '100%', display : 'flex', justifyContent : 'space-around', mb : 2,}}>
                  <Facebook sx={{width : '30px', height: '30px'}}/>
                  <Instagram sx={{width : '30px', height: '30px'}}/>
                  <Twitter sx={{width : '30px', height: '30px'}}/>
