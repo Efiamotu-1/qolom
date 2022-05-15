@@ -29,7 +29,13 @@ function Login() {
 
   
     if (email && password) {
-      navigate("register")
+      // fetch(' http://localhost:4000/users', {
+      //   method : 'POST',
+      //   headers : {"content-type" : "application/json"},
+      //   body : JSON.stringify({email, password})
+      // }).then(
+        navigate('/admin/dashboard')
+      
 
       // return
     }

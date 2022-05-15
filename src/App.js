@@ -6,7 +6,7 @@ import Layout from './components/Layout'
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import SignUp from './pages/UserSignUp';
-import AdminSignUp from './components/Admin/AdminSignUp'
+import AdminSignUp from '../src/Admin/AdminSignUp'
 // import Test from './components/test';
 
 // import BusinessHours from './pages/BusinessHours'

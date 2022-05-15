@@ -142,7 +142,7 @@ function LandingPage() {
           <Typography paragraph align="center">
             You can also create you own queue and have complete control over it.
             Set opening and closing time, send messages to people on the queue,
-            remove people, and many <Link href="/test">more</Link>
+            remove people, and many <Link href="/admin/register">more</Link>
           </Typography>
           </Box>
         </Grid>

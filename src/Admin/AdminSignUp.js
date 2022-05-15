@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import {Grid, Toolbar, Button, Card, CardContent, Typography, TextField, CardActions, Box, } from '@mui/material'
 import {ChevronLeft} from '@mui/icons-material'
 // import { makeStyles } from '@material-ui/core'
-import CountrySelect from '../Selectors/CountrySelect';
-import StateSelect from '../Selectors/StateSelect';
-import AgeSelect from '../Selectors/AgeSelect';
+import CountrySelect from '../components/Selectors/CountrySelect';
+import StateSelect from '../components/Selectors/StateSelect';
+import AgeSelect from '../components/Selectors/AgeSelect';
 
 
 

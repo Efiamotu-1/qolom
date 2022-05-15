@@ -3,16 +3,19 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, CssBaseline,  Avatar, Divider, Drawer, Box, AppBar } from '@mui/material';
 import PrimarySearchAppBar from './Navbar';
-import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined,} from '@mui/icons-material';
+import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined, } from '@mui/icons-material';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+
 import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
 import Logo from '../assests/images/logo-mock.jpg'
 import {Routes, Route} from 'react-router-dom'
-import Home from './Admin/Home';
-import BusinessHours from './Admin/BusinessHours';
-import CreateLine from './Admin/CreateLine';
-import EditProfile from './Admin/EditProfile';
-import ChangePassword from './Admin/ChangePassword'
+import Home from '../../src/Admin/Home';
+import BusinessHours from '../../src/Admin/BusinessHours';
+import CreateLine from '../../src/Admin/CreateLine';
+import EditProfile from '../../src/Admin/EditProfile';
+import ChangePassword from '../../src/Admin/ChangePassword'
 // import { withStyles } from '@material-ui/styles';
 
 
@@ -20,10 +23,18 @@ const drawerWidth = 300;
 
 const useStyles = makeStyles({
   active: {
-      backgroundColor: 'red',
+      backgroundColor: '#1F2937',
       // color : 'green',
    
   },
+
+  colorGreen : {
+    color : '#4ade80',
+    // marginLeft : -25,
+    // fontSize : 46,
+    // fontWeight : 'bold'
+
+  }, 
  center : {
    marginLeft : 'auto',
    marginRight : 'auto',
@@ -72,7 +83,7 @@ function ResponsiveDrawer(props) {
   const drawerList = [
     {
       text : "Dashboard",
-      path : "admin",
+      path : "dashboard",
       index : 1,
       icon : <DashboardCustomize />
     },
@@ -105,40 +116,22 @@ function ResponsiveDrawer(props) {
     
   
   ]
-  let style = { 
-    borderRadius : 3, ml: 2, mr : 2, width : 'auto',
-       '&:hover' : {
-      background : '#1F2937',
+  // let style = { 
+   
+  //   }, 
+  // };
+
+  // let hover = { 
+  //   borderRadius : 3, ml: 2, mr : 2, width : 'auto',
+  //      '&:hover' : {
+  //     background : 'red',
      
-    }, 
-  };
+  //   }, 
+  // };
 
-  const Comp = ({myStyle, list})=>{
-    return (<ListItem 
-      sx={myStyle}
-      key={list.index}
-      classes={{backgroundColor: 'red'} }
-      //  className={classes.active}
-       button
-      //  selected={list.path}
-      //  alignItems="flex-start"
-       onClick={()=> navigate(list.path)}
-      >
-        
-        <ListItemIcon 
-        className = {classes.white}
-        sx = {{color : 'white'}}
-        >
-          {list.icon} 
-        </ListItemIcon>
-       <ListItemText 
-      //  sx={{fontSize : 1}}
-       primary={list.text} 
-       sx = {{color : '#f4f4f4', ml : -3,}}
-
-       /> 
-      </ListItem>)
-  }
+  // const Comp = ({myStyle, hover, list})=>{
+  //   return ()
+  // }
 
   // const customStyle = 
   const drawer = (
@@ -164,24 +157,85 @@ function ResponsiveDrawer(props) {
           </div>
           
 <Divider className={classes.divider}/>
-      <List >
-        {drawerList.map((list, i) =>{
-          let myStyle = {};
-          console.log("/admin/"+list.path===location.pathname)
-            if(location.pathname === "/admin/"+list.path){
-              console.log(true);
-              myStyle = {...style, backgroundColor:'#1F2937', color : 'green'}
-            }
-            return (
-              <Comp list={list} key={i} myStyle={myStyle} />
-              
-            )
-        } 
-        )}
+      <List>
+      {drawerList.map((list) => (
+          <ListItem 
+          sx={{borderRadius : 3, ml: 2, mr : 2, width : 'auto', color : '#f4f4f4',
+       '&:hover' : {
+      background : '#1F2937',
+    
+    }, }}
+   key={list.index}
+    className={location.pathname === "/admin/"+list.path ? classes.active : null}
+   
+    onClick={()=> navigate(list.path)}
+          >
+           <ListItemIcon 
+    // className={location.pathname === "/admin/"+list.path ? classes.colorGreen : null}
+    
+    //  className = {classes.white}
+     sx = {{color : '#f4f4f4'}}
+     >
+       {list.icon} 
+     </ListItemIcon>
 
+            <ListItemText 
+    // className={location.pathname === "/admin/"+list.path ? classes.colorGreen : null} 
+    primary={list.text} 
+    sx = {{ ml : -3}}
+
+    /> 
+          </ListItem>
+        ))}
       </List>
+      <Divider />
+     
+       
+{/* </List> */}
       <Divider className={classes.divider}/>
-      
+
+           {/* let myStyle = {};
+           console.log("/admin/"+list.path === location.pathname)
+             if(location.pathname === "/admin/"+list.path){
+               console.log(true);
+               myStyle = {...style, backgroundColor:'#1F2937', color : 'green'}
+             }
+             return (
+               <Comp list={list} key={i} myStyle={myStyle} />
+              
+             )
+           <ListItem 
+    sx={{borderRadius : 3, ml: 2, mr : 2, width : 'auto',
+       '&:hover' : {
+      background : 'red',
+    
+    }, }}
+   style={style}
+   key={list.index}
+   classes={{backgroundColor: 'red'} }
+    className={classes.active}
+    button
+    selected={list.path}
+    alignItems="flex-start"
+    onClick={()=> navigate(list.path)}
+   >
+        
+     <ListItemIcon 
+     className = {classes.white}
+     sx = {{color : 'white'}}
+     >
+       {list.icon} 
+     </ListItemIcon>
+    <ListItemText 
+    sx={{fontSize : 1}}
+    primary={list.text} 
+    sx = {{color : '#f4f4f4', ml : -3,}}
+
+    /> 
+   </ListItem>
+     */}
+
+            
       
     </>
   );
@@ -256,7 +310,7 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar />
         <Routes>
-          <Route path="admin" element={<Home /> } />
+          <Route path="dashboard" element={<Home /> } />
           <Route path="businesshours" element={<BusinessHours /> } />
           <Route path="createline" element={<CreateLine /> } />
           <Route path="editprofile" element={<EditProfile /> } />

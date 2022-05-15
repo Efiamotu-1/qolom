@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Grid, Toolbar, Button, Card, CardContent, Typography, TextField, CardActions, Box, } from '@mui/material'
+import {Grid, Toolbar, Button, Card, CardContent,Link, Typography, TextField, CardActions, Box, } from '@mui/material'
 import {ChevronLeft} from '@mui/icons-material'
 import DatePicker from '../components/Selectors/DatePicker';
 
@@ -46,9 +46,9 @@ export default function Register() {
 
   return (
     <Grid >
-<Toolbar />
+{/* <Toolbar /> */}
       
-<Card sx={{ maxWidth: 550, margin : 'auto'}} elevation={10}>
+<Card sx={{ maxWidth: 550, marginLeft : 'auto', marginRight : 'auto', my :10}} elevation={10}>
     <CardContent>
     <Button
             variant="text"
@@ -59,11 +59,11 @@ export default function Register() {
             Back to Home
           </Button><br/>
 
-      <Typography variant="h4" color="text.secondary" gutterBottom>
+      <Typography variant="h4" align="center" color="text.secondary" gutterBottom>
         Create a New Account 
       </Typography>
 
-      <Typography paragraph  gutterBottom>
+      <Typography paragraph align="center" gutterBottom>
       Use your email to create a new account 
       </Typography>
       
@@ -146,9 +146,9 @@ export default function Register() {
     </form>
 
 
-    <Box sx={{ml:0, mb : -2}}>
-          Have an account? <Button variant='text' href="/register" sx={{textTransform : 'lowercase', ml : -1}}>Sign In</Button> 
-      </Box>
+    <Typography paragraph sx={{ml:2}} align="center">
+          Don't have an account? <Link underline="hover" href="/register" >Sign Up</Link> 
+      </Typography>
 
       </CardContent>
 
