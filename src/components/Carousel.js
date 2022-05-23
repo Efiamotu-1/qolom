@@ -58,6 +58,7 @@
 
 import React from "react";
 // import Bunny from "../assests/images/carousel.jpg";
+import {Link} from '@mui/material'
 
 function Carousels() {
   return (
@@ -99,9 +100,17 @@ function Carousels() {
             </div>
             {/* <br /> */}
           </div>
+          
         </div>
         
       </div>
+
+      <div class="row justify-content-center" >
+                    <Link href="/register">
+    
+                        <button class="btn btn-primary btn-lg"> Get Started</button>
+                    </Link>
+     </div>
     </>
   );
 }
