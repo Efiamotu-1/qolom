@@ -28,24 +28,24 @@ function Login() {
     e.preventDefault()
 
   
-    if (email && password) {
-      // fetch(' http://localhost:4000/users', {
-      //   method : 'POST',
-      //   headers : {"content-type" : "application/json"},
-      //   body : JSON.stringify({email, password})
-      // }).then(
-        navigate('/admin/dashboard')
+    if (email.includes('@') && password.trim().length > 7) {
       
+      fetch(' http://localhost:4000/users', {
+        method : 'POST',
+        headers : {"content-type" : "application/json"},
+        body : JSON.stringify({email, password})
+      }).then(
+        navigate('/admin/dashboard'))
 
       // return
     }
-    if (email === '') {
-      console.log("error")
+    if (email === '' ) {
+      alert('invalid email')
 
     }
 
-    if (password === '') {
-      console.log("error")
+    if (password === '' || password.trim().length < 7) {
+      alert('invalid password')
 
     }
 
@@ -54,10 +54,11 @@ function Login() {
   }
 
   return (
+      // <div style={{backgroundColor : 'rgba(0, 0, 0, 0.75'}}>
       <Grid >
       <Toolbar />
       {/* <Toolbar /> */}
-<Card sx={{ maxWidth: 550, margin : 'auto'}} elevation={10}>
+<Card sx={{ width: 400, margin : 'auto'}} elevation={10}>
       <CardContent>
 
       <Button
@@ -129,6 +130,7 @@ function Login() {
         <br/>
     </Card>
     </Grid>
+    // </div>
   )
 }
 

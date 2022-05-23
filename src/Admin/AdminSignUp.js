@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import {Grid, Toolbar, Button, Card, CardContent, Typography, TextField, CardActions, Box, } from '@mui/material'
+import {Grid,Button, Card, CardContent, Typography, TextField, CardActions, Link } from '@mui/material'
 import {ChevronLeft} from '@mui/icons-material'
 // import { makeStyles } from '@material-ui/core'
-import CountrySelect from '../components/Selectors/CountrySelect';
-import StateSelect from '../components/Selectors/StateSelect';
-import AgeSelect from '../components/Selectors/AgeSelect';
+// import CountrySelect from '../components/Selectors/CountrySelect';
+// import StateSelect from '../components/Selectors/StateSelect';
+// import AgeSelect from '../components/Selectors/AgeSelect';
 
 
 
@@ -54,9 +54,9 @@ export default function AdminSignUp() {
 
   return (
     <Grid >
-<Toolbar />
+{/* <Toolbar /> */}
       
-<Card sx={{ maxWidth: 600, margin : 'auto'}} elevation={10}>
+<Card sx={{ maxWidth: 400, marginLeft : 'auto', marginRight : 'auto', my : 5}} elevation={10}>
     <CardContent>
     <Button
             variant="text"
@@ -67,18 +67,18 @@ export default function AdminSignUp() {
             Back to Home
           </Button><br/>
 
-      <Typography variant="h4" color="text.secondary" align="center" gutterBottom>
+      <Typography variant="h4" color="text.secondary" align="center" gutterBottom sx={{my : 2}}>
         Register a Business
       </Typography>
     
       <br/>
       <form onSubmit={handleSubmit}>
 
-      <CountrySelect/>
+      {/* <CountrySelect/>
       <br/>
 
       <StateSelect />
-      <br/>
+      <br/> */}
 
    <TextField 
      label='Business Name' 
@@ -119,8 +119,8 @@ export default function AdminSignUp() {
    />   
   <br/>
 
-  <br/>
-    <AgeSelect /> 
+  {/* <br/>
+    <AgeSelect />  */}
 
   <br/>
    <TextField 
@@ -144,15 +144,15 @@ export default function AdminSignUp() {
   </Box> */}
 <br/>
     <CardActions>
-      <Button type="submit" variant='contained' size="large" sx={{width: '100%', }}>Sign Up Now</Button>
+      <Button type="submit" variant='contained' size="large" sx={{width: '100%', }}>Sign Up</Button>
     
     </CardActions>
     </form>
 
 
-    <Box sx={{ml:0}}>
-          Have an account? <Button variant='text' href="/register" sx={{textTransform : 'lowercase', ml : -1}}>Sign In</Button> 
-      </Box>
+    <Typography paragraph sx={{ml:2, my : 2}} align="center">
+          Have an account? <Link underline="hover" href="/login" >Sign In</Link> 
+      </Typography>
 
       </CardContent>
 

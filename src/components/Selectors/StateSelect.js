@@ -15,6 +15,7 @@ export default function StateSelect() {
         renderInput={(params) => (
           <TextField
             {...params}
+            required
             label="Choose a State"
             InputProps={{
               ...params.InputProps,

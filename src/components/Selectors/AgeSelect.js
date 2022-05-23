@@ -16,6 +16,7 @@ export default function AgeSelect() {
           <TextField
             {...params}
             label="Minimum Age"
+            required
             InputProps={{
               ...params.InputProps,
               type: 'search',

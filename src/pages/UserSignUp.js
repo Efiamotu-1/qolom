@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
-import {Grid, Toolbar, Button, Card, CardContent,Link, Typography, TextField, CardActions, Box, } from '@mui/material'
+import {Grid,Button, Card, CardContent,Link, Typography, TextField, CardActions} from '@mui/material'
 import {ChevronLeft} from '@mui/icons-material'
-import DatePicker from '../components/Selectors/DatePicker';
+// import DatePicker from '../components/Selectors/DatePicker';
+import {useNavigate} from 'react-router-dom'
 
 
 export default function Register() {
 
+  const navigate = useNavigate()
+
     const [firstname, setFirstname] = useState('')
-    const [lastname, setLastname] = useState('')
+    // const [lastname, setLastname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     
     const [firstnameError, setFirstnameError] = useState(false)
-    const [lastnameError, setLastnameError] = useState(false) 
     const [emailError, setEmailError] = useState(false)
     const [passwordError, setPasswordError] = useState(false) 
 
@@ -23,9 +25,7 @@ export default function Register() {
         setFirstnameError(true)
       }
 
-      if (lastname === '') {
-        setLastnameError(true)
-      }
+     
 
       if (email === '') {
         setEmailError(true)
@@ -35,12 +35,13 @@ export default function Register() {
         setPasswordError(true)
       }
 
-      if (firstname && lastname && email && password) {
+      if (firstname && email && password) {
         fetch('http://localhost:4000/users', {
           method: 'POST',
           headers: {"content-type" : "application/json"},
-          body: JSON.stringify({firstname,lastname,email,password})
-        })
+          body: JSON.stringify({firstname,email,password})
+        }).then(
+          navigate('/admin/dashboard'))
       }
     }
 
@@ -48,7 +49,7 @@ export default function Register() {
     <Grid >
 {/* <Toolbar /> */}
       
-<Card sx={{ maxWidth: 550, marginLeft : 'auto', marginRight : 'auto', my :10}} elevation={10}>
+<Card sx={{ width: 400, marginLeft : 'auto', marginRight : 'auto', my :10}} elevation={10}>
     <CardContent>
     <Button
             variant="text"
@@ -72,7 +73,7 @@ export default function Register() {
       <form onSubmit={handleSubmit}>
    <TextField 
   //    sx={{width : 400}}
-     label='First Name' 
+     label='Full Name (First Name & Last Name)' 
      variant='outlined'
      placeholder='' 
      color='primary' 
@@ -83,7 +84,7 @@ export default function Register() {
    />   
   <br/>
 
-  <br/>
+  {/* <br/>
    <TextField 
   //    sx={{width : 400}}
      label='Last Name' 
@@ -95,11 +96,11 @@ export default function Register() {
      required
      onChange={(e) => {setLastname(e.target.value)}}
 
-   />   
-  <br/>
+   />    */}
+  {/* <br//> */}
 
-    <br />
-  <DatePicker />
+    {/* <br /> */}
+  {/* <DatePicker /> */}
   {/* <br /> */}
 
   <br/>
@@ -140,14 +141,14 @@ export default function Register() {
   </Box> */}
 <br/>
     <CardActions>
-      <Button type="submit" variant='contained' size="large" sx={{width: '100%', }}>Sign Up Now</Button>
+      <Button type="submit" variant='contained' size="large" sx={{width: '100%', }}>Sign Up</Button>
     
     </CardActions>
     </form>
 
 
-    <Typography paragraph sx={{ml:2}} align="center">
-          Don't have an account? <Link underline="hover" href="/register" >Sign Up</Link> 
+    <Typography paragraph sx={{ml:2, my : 2}} align="center">
+          Have an account? <Link underline="hover" href="/login" >Sign In</Link> 
       </Typography>
 
       </CardContent>

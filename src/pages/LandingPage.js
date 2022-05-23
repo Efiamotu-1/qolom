@@ -7,7 +7,7 @@ import Carousels from "../components/Carousel";
 import Footer from "../components/Footer";
 import Bunny from '../assests/images/carousel.jpg'
 
-import { Grid, Avatar, Box, Link } from "@mui/material";
+import { Grid, Avatar, Box} from "@mui/material";
 import { BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
 import {Typography } from '@mui/material'
 // background: "linear-gradient(to left ,#03001c, #1E3A8A);",
@@ -80,13 +80,13 @@ function LandingPage() {
             {/* <Nav.Link href="/">Home</Nav.Link> */}
           </Nav>
           <Nav className="mx-5">
-            <Nav.Link href="/" className={`${classes.hover} ${classes.spacing}`} >
+            <Nav.Link style={{color : 'white'}} href="/" className={`${classes.hover} ${classes.spacing}`} >
               Home
             </Nav.Link>
 
-            <Nav.Link href="/login" className={`${classes.hover} ${classes.spacing}`} >Log In</Nav.Link>
+            <Nav.Link style={{color : 'white'}} href="/login" className={`${classes.hover} ${classes.spacing}`} >Log In</Nav.Link>
 
-            <Nav.Link eventKey={2} href="/register" className={classes.hover}>
+            <Nav.Link style={{color : 'white'}} eventKey={2} href="/register" className={classes.hover}>
               Sign Up
             </Nav.Link>
           </Nav>
@@ -101,7 +101,7 @@ function LandingPage() {
       </div>
     </div>
 
-      <Grid container spacing={2} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'space-evenly', py : 10}}>
+      <Grid container spacing={2} sx={{background :'white', color :'black', display : 'flex', justifyContent : 'space-evenly', py : 20}}>
         <Grid item xs={12} md={4} lg={4} >
           <Box sx={{width : 300, margin : 'auto'}}>
           <Avatar sx={{width : '70px', height : '70px', margin : 'auto', mb : 5}}> 
@@ -142,7 +142,7 @@ function LandingPage() {
           <Typography paragraph align="center">
             You can also create you own queue and have complete control over it.
             Set opening and closing time, send messages to people on the queue,
-            remove people, and many <Link href="/admin/register">more</Link>
+            remove people, and many more
           </Typography>
           </Box>
         </Grid>
