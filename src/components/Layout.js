@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import { List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, CssBaseline,  Avatar, Divider, Drawer, Box, AppBar } from '@mui/material';
 import PrimarySearchAppBar from './Navbar';
 import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined, } from '@mui/icons-material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 
 import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
