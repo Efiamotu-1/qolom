@@ -1,8 +1,8 @@
-import { Container, Grid, Button, Toolbar } from "@mui/material";
+import {  Grid, Button } from "@mui/material";
 import React from "react";
 import HomeCard from "../components/Cards/HomeCard";
 import queueOne from "../../src/assests/images/patience-queue.jpg";
-import queueTwo from "../../src/assests/images/atm-queue-.jpg";
+// import queueTwo from "../../src/assests/images/atm-queue-.jpg";
 import queueThree from "../../src/assests/images/covid-queue.jpg";
 
 export default function Home() {
@@ -24,8 +24,8 @@ export default function Home() {
           <HomeCard
             title="Create A Queue"
             queue={queueOne}
-            button={
-              <Button variant="contained" sx={{ width: "100%" }}>
+            clickbutton={
+              <Button variant="contained" sx={{ width: "100%", mx: 2, my: 1 }}>
                 Create a Line
               </Button>
             }
@@ -45,8 +45,8 @@ export default function Home() {
         >
           <HomeCard
             title="Manage Lines"
-            button={
-              <Button variant="contained" sx={{ width: "100%" }}>
+            clickbutton={
+              <Button variant="contained" sx={{ width: "100%", mx: 2, my: 1 }}>
                 Manage a line
               </Button>
             }
@@ -66,8 +66,8 @@ export default function Home() {
         >
           <HomeCard
             title="Orders"
-            button={
-              <Button variant="contained" sx={{ width: "100%" }}>
+            clickbutton={
+              <Button variant="contained" sx={{ width: "100%", mx: 2, my: 1 }}>
                 Make an Order
               </Button>
             }

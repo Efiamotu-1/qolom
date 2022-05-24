@@ -15,6 +15,8 @@ import BusinessHours from '../../src/Admin/BusinessHours';
 import CreateLine from '../../src/Admin/CreateLine';
 import EditProfile from '../../src/Admin/EditProfile';
 import ChangePassword from '../../src/Admin/ChangePassword'
+import Orders from '../../src/Admin/Orders'
+import OrderManagement from '../../src/Admin/OrderManagement'
 // import { withStyles } from '@material-ui/styles';
 
 
@@ -83,46 +85,39 @@ function ResponsiveDrawer(props) {
     {
       text : "Dashboard",
       path : "dashboard",
-      index : 1,
       icon : <DashboardCustomize />
     },
     {
       text : "Business Hours",
       path : "businesshours",
-      index : 2,
       icon : <BusinessCenter />
     },
       {
       text : "Create Line",
       path : "createline",
-      index : 3,
       icon : <LinearScale />
     },
 
     {
-      text : "Order",
-      path : "order",
-      index : 3,
+      text : "Orders",
+      path : "orders",
       icon : <Send />
     },
 
     {
       text : "Order Management",
       path : "ordermanagement",
-      index : 3,
-      icon : <Send />
+      icon : <BusinessCenter />
     },
    
     {
       text : "Edit Profile",
       path : "editprofile",
-      index : 4,
       icon : <EditAttributes />
     },
     {
       text : "Change Password",
       path : "changepassword",
-      index : 5,
       icon : <PasswordOutlined />
     },
    
@@ -171,14 +166,14 @@ function ResponsiveDrawer(props) {
           
 <Divider className={classes.divider}/>
       <List>
-      {drawerList.map((list) => (
+      {drawerList.map((list, i) => (
           <ListItem 
           sx={{borderRadius : 3, ml: 2, mr : 2, width : 'auto', color : '#f4f4f4',
        '&:hover' : {
       background : '#1F2937',
     
     }, }}
-   key={list.index}
+   key={i}
     className={location.pathname === "/admin/"+list.path ? classes.active : null}
    
     onClick={()=> navigate(list.path)}
@@ -328,6 +323,9 @@ function ResponsiveDrawer(props) {
           <Route path="createline" element={<CreateLine /> } />
           <Route path="editprofile" element={<EditProfile /> } />
           <Route path="changepassword" element={<ChangePassword /> } />
+          <Route path="orders" element={<Orders /> } />
+          <Route path="ordermanagement" element={<OrderManagement /> } />
+
 
         </Routes>
 
