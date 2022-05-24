@@ -55,7 +55,7 @@ function Login() {
 
   return (
       // <div style={{backgroundColor : 'rgba(0, 0, 0, 0.75'}}>
-      <Grid >
+      <Grid xs={12} md={6} lg={6}>
       <Toolbar />
       {/* <Toolbar /> */}
 <Card sx={{ width: 400, margin : 'auto'}} elevation={10}>

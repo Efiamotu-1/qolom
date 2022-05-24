@@ -172,7 +172,7 @@ export default function PrimarySearchAppBar(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static"
-      elevation = {0}
+      elevation = {-1}
       >
         <Toolbar sx={{backgroundColor : 'white'}}>
           {/* <IconButton
@@ -213,7 +213,7 @@ export default function PrimarySearchAppBar(props) {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={1} color="error">
                 <MailIcon sx={{color: 'gray'}}/>
               </Badge>
             </IconButton>

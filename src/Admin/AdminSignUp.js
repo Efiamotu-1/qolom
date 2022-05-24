@@ -53,7 +53,7 @@ export default function AdminSignUp() {
     }
 
   return (
-    <Grid >
+    <Grid xs={12} md={6} lg={6}>
 {/* <Toolbar /> */}
       
 <Card sx={{ maxWidth: 400, marginLeft : 'auto', marginRight : 'auto', my : 5}} elevation={10}>

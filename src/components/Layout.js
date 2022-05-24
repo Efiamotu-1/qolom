@@ -3,7 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, CssBaseline,  Avatar, Divider, Drawer, Box, AppBar } from '@mui/material';
 import PrimarySearchAppBar from './Navbar';
-import { BusinessCenter, DashboardCustomize, LinearScale, EditAttributes, PasswordOutlined, } from '@mui/icons-material';
+import { BusinessCenter, DashboardCustomize, Send, LinearScale, EditAttributes, PasswordOutlined, } from '@mui/icons-material';
 
 
 import { useNavigate, useLocation} from 'react-router-dom'
@@ -97,6 +97,20 @@ function ResponsiveDrawer(props) {
       path : "createline",
       index : 3,
       icon : <LinearScale />
+    },
+
+    {
+      text : "Order",
+      path : "order",
+      index : 3,
+      icon : <Send />
+    },
+
+    {
+      text : "Order Management",
+      path : "ordermanagement",
+      index : 3,
+      icon : <Send />
     },
    
     {
@@ -305,7 +319,7 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, background : '#f4f4f4', }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
         <Routes>

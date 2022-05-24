@@ -48,7 +48,7 @@ export default function BusinessHours() {
     <Grid item xs={12} md={6} lg={6} sx={{margin : 'auto'}}>
 
 
-      <Card sx={{borderRadius : 5}}>
+      <Card sx={{borderRadius : 5}} elevation={5}>
         <CardContent className={classes.center}>
           <Typography
             sx={{ fontSize: 30 }}

@@ -46,7 +46,7 @@ export default function Register() {
     }
 
   return (
-    <Grid >
+    <Grid xs={12} md={6} lg={6}>
 {/* <Toolbar /> */}
       
 <Card sx={{ width: 400, marginLeft : 'auto', marginRight : 'auto', my :10}} elevation={10}>
