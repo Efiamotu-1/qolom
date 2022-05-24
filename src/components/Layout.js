@@ -3,7 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, CssBaseline,  Avatar, Divider, Drawer, Box, AppBar } from '@mui/material';
 import PrimarySearchAppBar from './Navbar';
-import { BusinessCenter, DashboardCustomize, Send, LinearScale, EditAttributes, PasswordOutlined, } from '@mui/icons-material';
+import { BusinessCenter, DashboardCustomize, ShoppingCart, AddShoppingCart, LinearScale, EditAttributes, PasswordOutlined, } from '@mui/icons-material';
 
 
 import { useNavigate, useLocation} from 'react-router-dom'
@@ -101,13 +101,13 @@ function ResponsiveDrawer(props) {
     {
       text : "Orders",
       path : "orders",
-      icon : <Send />
+      icon : <ShoppingCart />
     },
 
     {
       text : "Order Management",
       path : "ordermanagement",
-      icon : <BusinessCenter />
+      icon : <AddShoppingCart />
     },
    
     {
