@@ -148,7 +148,7 @@ export default function CreateLine() {
         <Typography variant="h5" color="blue" align="center">Manage Lines</Typography>
         <br/>
       <Typography
-            sx={{ fontSize: 20, textAlign :  'center' }}
+            sx={{ fontSize: 18, textAlign :  'center' }}
             color="text.secondary"
             align="center"
             gutterBottom
@@ -160,10 +160,31 @@ export default function CreateLine() {
         Your key is <span style={{fontWeight : 'bold'}}>{key}</span>
       </Typography>
           <br/>
-        
+    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
+      <CardContent>
+        <Typography align="center" color="blue">Caffeine</Typography>
+      </CardContent>
+    </Card>
+    <Card sx={{width : 400, margin : 'auto'}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color="goldenrod">Edit Line</Typography>
+      </CardContent>
+    </Card>
+    <br/>
+    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color ="blue">Coffee Line</Typography>
+      </CardContent>
+    </Card>
+    <Card sx={{width : 400, margin : 'auto'}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color="goldenrod">Edit Line</Typography>
+      </CardContent>
+    </Card>
       </CardContent>
       
-    </Card>
+      </Card>
+   
         </Grid>
         </Grid>
 
