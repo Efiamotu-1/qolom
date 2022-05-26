@@ -12,7 +12,7 @@ import Logo from '../assests/images/logo-mock.jpg'
 import {Routes, Route} from 'react-router-dom'
 import Home from '../../src/Admin/Home';
 import BusinessHours from '../../src/Admin/BusinessHours';
-import CreateLine from '../../src/Admin/CreateLine';
+import ManageLine from '../../src/Admin/ManageLine';
 import EditProfile from '../../src/Admin/EditProfile';
 import ChangePassword from '../../src/Admin/ChangePassword'
 import Orders from '../../src/Admin/Orders'
@@ -93,8 +93,8 @@ function ResponsiveDrawer(props) {
       icon : <BusinessCenter />
     },
       {
-      text : "Create Line",
-      path : "createline",
+      text : "Manage Line",
+      path : "manageline",
       icon : <LinearScale />
     },
 
@@ -320,7 +320,7 @@ function ResponsiveDrawer(props) {
         <Routes>
           <Route path="dashboard" element={<Home /> } />
           <Route path="businesshours" element={<BusinessHours /> } />
-          <Route path="createline" element={<CreateLine /> } />
+          <Route path="manageline" element={<ManageLine /> } />
           <Route path="editprofile" element={<EditProfile /> } />
           <Route path="changepassword" element={<ChangePassword /> } />
           <Route path="orders" element={<Orders /> } />

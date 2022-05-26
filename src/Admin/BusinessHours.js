@@ -48,7 +48,7 @@ export default function BusinessHours() {
     <Grid item xs={12} md={6} lg={6} sx={{margin : 'auto'}}>
 
 
-      <Card sx={{borderRadius : 5}} elevation={5}>
+      <Card sx={{ borderRadius : 5}} elevation={5}>
         <CardContent className={classes.center}>
           <Typography
             sx={{ fontSize: 30 }}
@@ -62,19 +62,19 @@ export default function BusinessHours() {
           {businessDays.map((days) => (
             <>
               <br />
-              <Typography variant="h6">{days}</Typography>
+              <Typography variant="h6" align="center">{days}</Typography>
               <br />
-              <Grid container spacing={2}>
+              <Grid container spacing={3}>
               <Grid 
-              sx={{display : 'flex', justifyContent : 'center'}}
-              item xs={12} md={6} lg={6}
+              sx={{display : 'flex', justifyContent : 'center', marginLeft : 1, marginRight : 1}}
+              item xs={12} md={12} lg={12}
               >
                 
               <BasicTimePicker title="Opens At" />
               </Grid>
               <Grid 
-              item xs={12} md={6} lg={6}
-              sx={{display : 'flex', justifyContent : 'center'}}
+              item xs={12} md={12} lg={12}
+              sx={{display : 'flex', justifyContent : 'center', marginLeft : 1, marginRight : 1}}
 
               >
               <BasicTimePicker title="Closes At" />

@@ -6,7 +6,6 @@ import queueOne from "../../src/assests/images/patience-queue.jpg";
 import queueThree from "../../src/assests/images/covid-queue.jpg";
 
 export default function Home() {
-  console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 10))
   return (
       <Grid
         container
