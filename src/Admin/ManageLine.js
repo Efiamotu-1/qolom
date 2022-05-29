@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import {Card, CardContent, TextField, Button, Typography, Grid, Box} from '@mui/material'
 import { makeStyles } from '@material-ui/core';
 
+const drawerWidth = 300
+
 const useStyles = makeStyles({
   cardWidth : {
     width : 600
@@ -20,17 +22,17 @@ const useStyles = makeStyles({
     // display : 'block',
     width : '100%'
   },
-  overlay : {
-    position: 'fixed',
-    top: '20vh',
-    left: '20%',
-    width: '80%',
-    zIndex: 100,
-    // backgroundColor : 'black',
-    // height: '100vh'
+  // overlay : {
+  //   position: 'relative',
+  //   top: '10%',
+  //   right: '20%',
+  //   width: '80%',
+  //   zIndex: 100,
+  //   // backgroundColor : 'black',
+  //   // height: '100vh'
 
-    // overflow: 'hidden',
-  },
+  //   // overflow: 'hidden',
+  // },
   backdrop : {
     background : 'rgb(0, 0, 0, 0.75)', 
     height : '100vh',
@@ -47,15 +49,40 @@ const useStyles = makeStyles({
 export default function CreateLine() {
   const classes = useStyles();
   const [create, setCreate] = useState(false)
-  let key = Math.random().toString(36).replace(/[^a-z^]+/g, '').substr(0, 10)
+  let key = Math.random().toString(36).replace( /[^-Z^]+ /g, '').substr(0, 10)
   return (
     <>
 {create &&  
   <div className={create ? classes.backdrop : null} onClick={()=> {setCreate(false)}}>
 
-        <Grid className={classes.overlay} sx={{marginLeft : -5}}>
-        <Grid item xs={12} md={6} lg={6} > 
-        <Card sx={{ width : 400, marginLeft : 'auto', marginRight : 'auto'}}>
+        <Grid container
+         sx={{
+         
+        }}
+        >
+        <Grid item xs={12} md={12} lg={12} > 
+        <Card sx={{ width: 400,
+           position : {
+            sm : 'relative', md: 'relative', lg : 'relative'
+           },
+           top : {
+             sm : '10%'
+           },
+          left: {
+            sm : '20%'
+          }, 
+         
+           zIndex: { 
+             sm : 100
+           },
+         marginLeft : {
+           sm :'auto',
+         },
+         marginRight : {
+           sm :'auto',
+         }
+          // width : 400, marginLeft : 'auto', marginRight : 'auto', marginTop : 10
+          }}>
       <CardContent>
       <Typography
             sx={{ fontSize: 22, textAlign :  'center' }}
@@ -138,58 +165,40 @@ export default function CreateLine() {
        <br/>
        </Box>
        </Grid>
-     <Grid item xs={12} md={12} lg={12} > 
-     
-    
-
-        <Card sx={{borderRadius : 5, width : 600, margin : 'auto'}} elevation={5}>
-      <CardContent>
-     
-        <Typography variant="h5" color="blue" align="center">Manage Lines</Typography>
-        <br/>
-      <Typography
-            sx={{ fontSize: 18, textAlign :  'center' }}
-            color="text.secondary"
-            align="center"
-            gutterBottom
-          >
-           Customers may join any of your lines by searching for your business name or using your key.
-            This key is connected to all your lines.
-      </Typography>
-      <Typography align="center" color= "blue">
-        Your key is <span style={{fontWeight : 'bold'}}>{key}</span>
-      </Typography>
-          <br/>
-    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
-      <CardContent>
-        <Typography align="center" color="blue">Caffeine</Typography>
-      </CardContent>
-    </Card>
-    <Card sx={{width : 400, margin : 'auto'}} elevation={3}>
-    <CardContent>
-        <Typography align="center" color="goldenrod">Edit Line</Typography>
-      </CardContent>
-    </Card>
-    <br/>
-    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
-    <CardContent>
-        <Typography align="center" color ="blue">Coffee Line</Typography>
-      </CardContent>
-    </Card>
-    <Card sx={{width : 400, margin : 'auto'}} elevation={3}>
-    <CardContent>
-        <Typography align="center" color="goldenrod">Edit Line</Typography>
-      </CardContent>
-    </Card>
-      </CardContent>
-      
-      </Card>
-   
+       
         </Grid>
-        </Grid>
-
        
         </>
   )
 }
  
+
+<Grid container>
+<Grid item xs={12} md={8} sx={{margin : 'auto'}}>
+
+<Card sx={{ margin : 'auto', borderRadius : 5}} elevation={5}>
+
+<CardContent>
+<Typography
+        sx={{ fontSize: 30 }}
+        color="text.secondary"
+        align="center"
+        gutterBottom
+      >
+        Change Password
+      </Typography>
+      <br/>
+<form noValidate autoComplete='off' >
+
+<Typography variant="h6">Current Password</Typography>
+
+
+
+</form>
+</CardContent>
+{/* <CardActions>
+  <Button size="small">Learn More</Button>
+</CardActions> */}
+</Card>
+</Grid>
+</Grid>

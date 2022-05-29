@@ -159,3 +159,54 @@ export default function Glayout(props: Props) {
     </Box>
   );
 }
+
+<Grid >
+     <Grid item xs={12} md={12} lg={12} sx={{width : 600,}}> 
+     
+    
+
+        <Card sx={{borderRadius : 5,  margin : 'auto'}} elevation={5}>
+      <CardContent>
+     
+        <Typography variant="h5" color="blue" align="center">Manage Lines</Typography>
+        <br/>
+      <Typography
+            sx={{ fontSize: 18, textAlign :  'center' }}
+            color="text.secondary"
+            align="center"
+            gutterBottom
+          >
+           Customers may join any of your lines by searching for your business name or using your key.
+            This key is connected to all your lines.
+      </Typography>
+      <Typography align="center" color= "blue">
+        Your key is <span style={{fontWeight : 'bold'}}>{key}</span>
+      </Typography>
+          <br/>
+    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
+      <CardContent>
+        <Typography align="center" color="blue">Caffeine</Typography>
+      </CardContent>
+    </Card>
+    <Card sx={{width : 400, margin : 'auto'}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color="goldenrod">Edit Line</Typography>
+      </CardContent>
+    </Card>
+    <br/>
+    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color ="blue">Coffee Line</Typography>
+      </CardContent>
+    </Card>
+    <Card sx={{width : 400, margin : 'auto'}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color="goldenrod">Edit Line</Typography>
+      </CardContent>
+    </Card>
+      </CardContent>
+      
+      </Card>
+   
+        </Grid>
+        </Grid>
