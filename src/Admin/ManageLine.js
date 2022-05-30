@@ -60,7 +60,7 @@ export default function CreateLine() {
         }}
         >
         <Grid item xs={12} md={12} lg={12} > 
-        <Card sx={{ width : {xs : 400, md :400, lg : 400} ,marginLeft : 'auto', marginRight : 'auto', marginTop : 10
+        <Card sx={{ width : {xs : 400, md :400, lg : 400}, marginLeft : 'auto', marginRight : {xs : '10%', md : '20%', lg : '20%'}, marginTop : 15
           }}>
       <CardContent>
       <Typography
