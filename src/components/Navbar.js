@@ -17,7 +17,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Avatar } from '@mui/material';
-import Logo from '../assests/images/logo-mock.jpg'
+import Logo from '../assets/images/logo-mock.jpg'
 
 const drawerWidth = 240
 

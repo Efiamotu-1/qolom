@@ -49,7 +49,7 @@ export default function Register() {
     <Grid xs={12} md={6} lg={6}>
 {/* <Toolbar /> */}
       
-<Card sx={{ width: 400, marginLeft : 'auto', marginRight : 'auto', my :10}} elevation={10}>
+<Card sx={{ width: 400, marginLeft : 'auto', marginRight : 'auto', my :7}} elevation={10}>
     <CardContent>
     <Button
             variant="text"

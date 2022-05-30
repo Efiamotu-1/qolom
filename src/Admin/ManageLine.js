@@ -61,27 +61,7 @@ export default function CreateLine() {
         }}
         >
         <Grid item xs={12} md={12} lg={12} > 
-        <Card sx={{ width: 400,
-           position : {
-            sm : 'relative', md: 'relative', lg : 'relative'
-           },
-           top : {
-             sm : '10%'
-           },
-          left: {
-            sm : '20%'
-          }, 
-         
-           zIndex: { 
-             sm : 100
-           },
-         marginLeft : {
-           sm :'auto',
-         },
-         marginRight : {
-           sm :'auto',
-         }
-          // width : 400, marginLeft : 'auto', marginRight : 'auto', marginTop : 10
+        <Card sx={{ width : {xs : 400, md :400, lg : 400} ,marginLeft : 'auto', marginRight : 'auto', marginTop : 10
           }}>
       <CardContent>
       <Typography
@@ -167,7 +147,47 @@ export default function CreateLine() {
        </Grid>
        
         </Grid>
-       
+        <Grid >
+     <Grid item xs={12} md={12} lg={12} sx={{ width : {xs : 450, md :600, lg : 600} ,marginLeft : 'auto', marginRight : 'auto', marginTop : 5}}> 
+     
+    
+
+        <Card sx={{borderRadius : 5,  margin : 'auto'}} elevation={5}>
+      <CardContent>
+     
+        <Typography variant="h5" color="blue" align="center">Manage Lines</Typography>
+        <br/>
+      <Typography
+            sx={{ fontSize: 18, textAlign :  'center', mx : 5 }}
+            color="text.secondary"
+            align="center"
+            gutterBottom
+          >
+           Customers may join any of your lines by searching for your business name or using your key.
+            This key is connected to all your lines.
+      </Typography>
+      <Typography align="center" color= "blue">
+        Your key is <span style={{fontWeight : 'bold'}}>{key}</span>
+      </Typography>
+          <br/>
+    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
+      <CardContent>
+        <Typography align="center" color="blue">Caffeine</Typography>
+      </CardContent>
+    </Card>
+    <br/>
+    <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
+    <CardContent>
+        <Typography align="center" color ="blue">Coffee Line</Typography>
+      </CardContent>
+    </Card>
+    
+      </CardContent>
+      
+      </Card>
+   
+        </Grid>
+        </Grid>
         </>
   )
 }

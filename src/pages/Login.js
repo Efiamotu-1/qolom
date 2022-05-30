@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import Logo from '../assets/images/vector/default-monochrome.svg'
 import {useNavigate} from 'react-router-dom'
-import {Card, CardContent, Typography, CardActions, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput} from '@mui/material'
+import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput} from '@mui/material'
 import { ChevronLeft, Visibility, VisibilityOff } from '@mui/icons-material'
 
 function Login() {
@@ -59,7 +60,7 @@ function Login() {
       <Toolbar />
       {/* <Toolbar /> */}
 <Card sx={{ width: 400, margin : 'auto'}} elevation={10}>
-      <CardContent>
+      <CardContent >
 
       <Button
               variant="text"
@@ -68,11 +69,23 @@ function Login() {
               href="/"
             >
               Back to Home
-            </Button>
+      </Button>
+      <br/><br/>
 
-        <Typography sx={{ fontSize: 30}} color="text.secondary" align = "center" gutterBottom>
-          LOG IN  
-        </Typography>
+            <Box
+        component="img"
+        sx={{
+          height: 50,
+          width: 100,
+          marginLeft : 16,
+          marginTop : -2,
+          // maxHeight: { xs: 233, md: 167 },
+          // maxWidth: { xs: 350, md: 250 },
+        }}
+        alt="...logo"
+        src={Logo}
+      /><br/>
+  
 <br/>
       <form onSubmit={handleSubmit}>
 

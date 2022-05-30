@@ -9,16 +9,6 @@ import SignUp from './pages/UserSignUp';
 import AdminSignUp from '../src/Admin/AdminSignUp'
 // import Test from './components/test';
 
-// import BusinessHours from './pages/BusinessHours'
-// import ChangePassword from './pages/ChangePassword'
-// import ContactUs from './pages/ContactUs'
-// import CreateLine from './pages/CreateLine'
-// import EditProfile from './pages/EditProfile'
-// import Home from './pages/Home'
-// import LogOut from './pages/LogOut'
-// import Glayout from './components/Glayout'
-// import { makeStyles } from '@material-ui/core';
-
 
 
 export default function App() {
@@ -36,15 +26,6 @@ export default function App() {
          <Route path="/admin/register" element={<AdminSignUp />} />
          {/* <Route path="/test" element={<TestPage />} /> */}
 
-
-
-
-       {/* <Route path="teams" element={<Home />}>
-          <Route path=":teamId" element={<BusinessHours />} />
-          <Route path="new" element={<CreateLine />} />
-          <Route index element={<EditProfile />} />
-        </Route> */}
-      {/* </Route>  */}
     </Routes>
 
 

@@ -2,10 +2,10 @@ import React from "react";
 // import { Link } from 'react-router-dom'
 import { Navbar, Nav, } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core";
-import Logo from "../assests/images/logo-mock-removebg-preview.png";
+import Logo from "../assets/images/vector/cover.png";
 import Carousels from "../components/Carousel";
 import Footer from "../components/Footer";
-import Bunny from '../assests/images/carousel.jpg'
+import Bunny from '../assets/images/carousel.jpg'
 
 import { Grid, Avatar, Box} from "@mui/material";
 import { BusinessCenter, People, TimerTwoTone } from "@mui/icons-material";
@@ -71,7 +71,7 @@ function LandingPage() {
       <div class="m-auto" style={mystyle} >
       <div class="d-flex align-items-center flex-column" style={opacity}>
       <Navbar collapseOnSelect expand="lg" style={{width : '100%'}}>
-        <Navbar.Brand href="#home" class="ms-4">
+        <Navbar.Brand href="#home" style={{marginLeft : 25}}>
           <img src={Logo} alt="../" width="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

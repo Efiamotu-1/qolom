@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core';
 import {Box, Grid, Link, Typography} from '@mui/material'
-// import Logo from '../assests/images/logo-mock-removebg-preview.png'
+import Logo from '../assets/images/vector/default-monochrome.svg'
 
 import { Facebook,  Instagram, Twitter, YouTube } from '@mui/icons-material'
 
@@ -28,11 +28,20 @@ function Footer() {
 
     <Grid item xs={12} md={4} lg={4} >
       <Box sx={{width : 200, margin : 'auto'}}>
-      <Box sx={{marginLeft : 'auto', marginRight : 'auto'}}>
-
-       {/* <img src={Logo} alt="...Logo" style={{ width : '70px', height : '50px'}}/> */}
-
-       </Box>
+      <Box
+        component="img"
+        sx={{
+          height: 50,
+          width: 100,
+          marginLeft : 5,
+          marginRight : 5,
+          marginTop : -2,
+          // maxHeight: { xs: 233, md: 167 },
+          // maxWidth: { xs: 350, md: 250 },
+        }}
+        alt="...logo"
+        src={Logo}
+      />
   
 
              <Typography paragraph align="center" sx={{width : '100%', mb : 1}}>

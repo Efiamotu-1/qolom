@@ -1,9 +1,9 @@
 import {  Grid, Button } from "@mui/material";
 import React from "react";
 import HomeCard from "../components/Cards/HomeCard";
-import queueOne from "../../src/assests/images/patience-queue.jpg";
+import queueOne from "../../src/assets/images/patience-queue.jpg";
 // import queueTwo from "../../src/assests/images/atm-queue-.jpg";
-import queueThree from "../../src/assests/images/covid-queue.jpg";
+import queueThree from "../../src/assets/images/covid-queue.jpg";
 
 export default function Home() {
   return (

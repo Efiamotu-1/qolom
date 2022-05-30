@@ -8,7 +8,7 @@ import { BusinessCenter, DashboardCustomize, ShoppingCart, AddShoppingCart, Line
 
 import { useNavigate, useLocation} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core';
-import Logo from '../assests/images/logo-mock.jpg'
+import Logo from '../assets/images/logo-mock.jpg'
 import {Routes, Route} from 'react-router-dom'
 import Home from '../../src/Admin/Home';
 import BusinessHours from '../../src/Admin/BusinessHours';
