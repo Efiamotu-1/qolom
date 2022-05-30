@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from 'react-router-dom'
 import { Navbar, Nav, } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core";
-import Logo from "../assets/images/vector/cover.png";
+import Logo from "../assets/images/vector/default-monochrome-white.svg";
 import Carousels from "../components/Carousel";
 import Footer from "../components/Footer";
 import Bunny from '../assets/images/carousel.jpg'
