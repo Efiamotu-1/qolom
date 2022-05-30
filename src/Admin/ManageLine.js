@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import {Card, CardContent, TextField, Button, Typography, Grid, Box} from '@mui/material'
 import { makeStyles } from '@material-ui/core';
 
-const drawerWidth = 300
 
 const useStyles = makeStyles({
   cardWidth : {
