@@ -71,8 +71,8 @@ function LandingPage() {
       <div class="m-auto" style={mystyle} >
       <div class="d-flex align-items-center flex-column" style={opacity}>
       <Navbar collapseOnSelect expand="lg" style={{width : '100%'}}>
-        <Navbar.Brand href="#home" style={{marginLeft : 25}}>
-          <img src={Logo} alt="../" width="100px" />
+        <Navbar.Brand href="#home" style={{marginLeft : 25, color : 'blue'}}>
+          <img src={Logo} alt="../" width="100px" height="20px"/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
