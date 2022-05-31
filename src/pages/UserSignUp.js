@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import {Grid,Button, Card, CardContent,Link, Typography, TextField, CardActions} from '@mui/material'
+import {Grid,Button, Card, CardContent,Link, Box, Typography, TextField, CardActions} from '@mui/material'
 import {ChevronLeft} from '@mui/icons-material'
 // import DatePicker from '../components/Selectors/DatePicker';
 import {useNavigate} from 'react-router-dom'
+import Logo from '../assets/images/vector/default-monochrome.svg'
 
 
 export default function Register() {
@@ -59,6 +60,20 @@ export default function Register() {
           >
             Back to Home
           </Button><br/>
+    
+          <Box
+        component="img"
+        sx={{
+          height: 50,
+          width: 100,
+          marginLeft : 16,
+          marginRight : '10px',
+          // maxHeight: { xs: 233, md: 167 },
+          // maxWidth: { xs: 350, md: 250 },
+        }}
+        alt="...logo"
+        src={Logo}
+      /><br/>  
 
       <Typography variant="h4" align="center" color="text.secondary" gutterBottom>
         Create a New Account 
@@ -67,7 +82,8 @@ export default function Register() {
       <Typography paragraph align="center" gutterBottom>
       Use your email to create a new account 
       </Typography>
-      
+
+         
 
       <br/>
       <form onSubmit={handleSubmit}>

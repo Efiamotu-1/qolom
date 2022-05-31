@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import {Grid,Button, Card, CardContent, Typography, TextField, CardActions, Link } from '@mui/material'
+import {Grid,Button, Card, CardContent, Typography,Box, TextField, CardActions, Link } from '@mui/material'
+import Logo from '../assets/images/vector/default-monochrome.svg'
 import {ChevronLeft} from '@mui/icons-material'
 // import { makeStyles } from '@material-ui/core'
 // import CountrySelect from '../components/Selectors/CountrySelect';
@@ -66,6 +67,20 @@ export default function AdminSignUp() {
           >
             Back to Home
           </Button><br/>
+
+          <Box
+        component="img"
+        sx={{
+          height: 50,
+          width: 100,
+          marginLeft : 16,
+          // marginRight : '10px',
+          // maxHeight: { xs: 233, md: 167 },
+          // maxWidth: { xs: 350, md: 250 },
+        }}
+        alt="...logo"
+        src={Logo}
+      />
 
       <Typography variant="h4" color="text.secondary" align="center" gutterBottom sx={{my : 2}}>
         Register a Business
