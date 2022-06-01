@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {Card, CardContent, TextField, Button, Typography, Grid, Box} from '@mui/material'
 import { makeStyles } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -46,6 +47,7 @@ const useStyles = makeStyles({
 })
 
 export default function CreateLine() {
+  const navigate = useNavigate()
   const classes = useStyles();
   const [create, setCreate] = useState(false)
   let key = Math.random().toString(36).replace( /[^-Z^]+ /g, '').substr(0, 10)
@@ -171,7 +173,7 @@ export default function CreateLine() {
           <br/>
     <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
       <CardContent>
-        <Typography align="center" color="blue">Caffeine</Typography>
+        <Typography align="center" color="blue" onClick={()=> {navigate('/admin/line')}}>Caffeine</Typography>
       </CardContent>
     </Card>
     <br/>
