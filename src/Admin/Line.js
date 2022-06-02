@@ -4,14 +4,24 @@ import React from 'react'
 function Line() {
     let key = Math.random().toString(36).replace(/[^a-zA-Z0-9$]{10,12}/).substring(2,10)
   return (
-    <div style={{backgroundColor : 'gray', height : '100vh'}}>
+    <div style={{backgroundColor : '#f3f4f6', height : '100vh'}}>
 
     <Toolbar />
-    <Toolbar />
+    {/* <Toolbar /> */}
         <Grid container  >
-        <Grid xs={11} md={6} lg={6} align="center" sx={{mx : 'auto'}}>
-           <Card elevation={5} sx={{mx : 'auto', borderRadius : 5, width : {xs: 400, md : 600, lg : 600}}}>
+        <Grid item xs={11} md={6} lg={6} align="center" sx={{mx : 'auto'}}>
+           <Card elevation={1} sx={{mx : 'auto', borderRadius : 5, border : '1px solid #d1d5db', width : {xs: 400, md : 600, lg : 600}}}>
                 <CardContent>
+                    <Box sx={{display : 'flex', alignItems : 'center', justifyContent : 'space-between'}}>
+                        <Box sx={{display : 'flex', alignItems : 'center' }}>
+                            <Card variant='contained' sx={{background : 'goldenrod', color : 'white', px : 3, py : 2, borderRadius : 2, fontWeight : 'bold'}}>S</Card>
+                            <Typography sx={{color : 'goldenrod', fontSize : '16', marginLeft : 2}}>Starbucks</Typography>
+                        </Box>
+                        <Box>
+                            <Typography >No</Typography>
+                            <Typography color="primary">{Math.round(Math.random())}</Typography>
+                        </Box>
+                    </Box>
                     <Typography sx={{ fontSize: 18, mb : '1px'}} color="blue" >
                         Coffee Line
                     </Typography>

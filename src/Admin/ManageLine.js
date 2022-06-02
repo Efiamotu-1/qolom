@@ -54,7 +54,11 @@ export default function CreateLine() {
   return (
     <>
 {create &&  
-  <div className={create ? classes.backdrop : null} onClick={()=> {setCreate(false)}}>
+  <div className={create && classes.backdrop } onClick={(e)=> {
+    setCreate(false) 
+    // e.stopPropagation()
+    // console.log("div clicked")
+    }}>
 
         <Grid container
          sx={{
@@ -65,12 +69,15 @@ export default function CreateLine() {
         <Card sx={{ width : {xs : 400, md :400, lg : 400}, marginLeft : 'auto', marginRight : {xs : '10%', md : '20%', lg : '20%'}, marginTop : 15
           }}>
       <CardContent>
+        {console.log("hello")}
       <Typography
             sx={{ fontSize: 22, textAlign :  'center' }}
             color="text.secondary"
             align="center"
             gutterBottom
+            onClick={() => {console.log("grid clicked")}}
           >
+            
             Create Line
           </Typography>
       <form noValidate autoComplete='off' >
