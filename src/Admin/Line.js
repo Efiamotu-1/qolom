@@ -12,7 +12,7 @@ function Line() {
         <Grid item xs={11} md={6} lg={6} align="center" sx={{mx : 'auto'}}>
            <Card elevation={1} sx={{mx : 'auto', borderRadius : 5, border : '1px solid #d1d5db', width : {xs: 400, md : 600, lg : 600}}}>
                 <CardContent>
-                    <Box sx={{display : 'flex', alignItems : 'center', justifyContent : 'space-between'}}>
+                    <Box sx={{mx : 4, display : 'flex', alignItems : 'center', justifyContent : 'space-between'}}>
                         <Box sx={{display : 'flex', alignItems : 'center' }}>
                             <Card variant='contained' sx={{background : 'goldenrod', color : 'white', px : 3, py : 2, borderRadius : 2, fontWeight : 'bold'}}>S</Card>
                             <Typography sx={{color : 'goldenrod', fontSize : '16', marginLeft : 2}}>Starbucks</Typography>
