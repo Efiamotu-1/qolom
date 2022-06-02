@@ -17,6 +17,7 @@ import EditProfile from '../../src/Admin/EditProfile';
 import ChangePassword from '../../src/Admin/ChangePassword'
 import Orders from '../../src/Admin/Orders'
 import OrderManagement from '../../src/Admin/OrderManagement'
+import Line from '../Admin/Line';
 // import { withStyles } from '@material-ui/styles';
 
 
@@ -325,6 +326,8 @@ function ResponsiveDrawer(props) {
           <Route path="changepassword" element={<ChangePassword /> } />
           <Route path="orders" element={<Orders /> } />
           <Route path="ordermanagement" element={<OrderManagement /> } />
+          <Route path="manageline/line" element={<Line />} />
+
 
 
         </Routes>

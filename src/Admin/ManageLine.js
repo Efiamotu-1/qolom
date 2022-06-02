@@ -180,7 +180,7 @@ export default function CreateLine() {
           <br/>
     <Card sx={{width : 400, margin : 'auto', my : 0.5}} elevation={3}>
       <CardContent>
-        <Typography align="center" color="blue" onClick={()=> {navigate('/admin/line')}}>Caffeine</Typography>
+        <Typography align="center" color="blue" onClick={()=> {navigate('line')}}>Caffeine</Typography>
       </CardContent>
     </Card>
     <br/>

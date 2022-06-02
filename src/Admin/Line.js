@@ -4,12 +4,12 @@ import React from 'react'
 function Line() {
     let key = Math.random().toString(36).replace(/[^a-zA-Z0-9$]{10,12}/).substring(2,10)
   return (
-    <div style={{backgroundColor : '#f3f4f6', height : '100vh'}}>
-
+    // <div style={{backgroundColor : '#f3f4f6', height : '100vh'}}>
+    <>
     <Toolbar />
     {/* <Toolbar /> */}
         <Grid container  >
-        <Grid item xs={11} md={6} lg={6} align="center" sx={{mx : 'auto'}}>
+        <Grid  align="center" sx={{mx : 'auto'}}>
            <Card elevation={1} sx={{mx : 'auto', borderRadius : 5, border : '1px solid #d1d5db', width : {xs: 400, md : 600, lg : 600}}}>
                 <CardContent>
                     <Box sx={{mx : 4, display : 'flex', alignItems : 'center', justifyContent : 'space-between'}}>
@@ -70,7 +70,8 @@ function Line() {
             </Card>
         </Grid>
         </Grid>
-    </div>
+    {/* </div> */}
+    </>
   )
 }
 

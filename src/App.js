@@ -7,7 +7,7 @@ import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import SignUp from './pages/UserSignUp';
 import AdminSignUp from '../src/Admin/AdminSignUp'
-import Line from './Admin/Line';
+// import Line from './Admin/Line';
 // import Test from './components/test';
 
 
@@ -25,7 +25,7 @@ export default function App() {
          <Route path="/login" element={<Login />} />
          <Route path="/register" element={<SignUp />} />
          <Route path="/admin/register" element={<AdminSignUp />} />
-         <Route path="/admin/line" element={<Line />} />
+         {/* <Route path="/admin/line" element={<Line />} /> */}
 
          {/* <Route path="/test" element={<TestPage />} /> */}
 
