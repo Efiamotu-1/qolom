@@ -1,8 +1,11 @@
 import React from 'react'
+import {Card, CardContent} from '@mui/material'
 
 function Orders() {
   return (
-    <div>Orders</div>
+   <Card>
+     <CardContent>Orders</CardContent>
+   </Card>
   )
 }
 
