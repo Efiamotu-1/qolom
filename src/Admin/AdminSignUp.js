@@ -49,7 +49,7 @@ export default function AdminSignUp() {
         console.log("empty")
       }
 
-      if (password.trim().length < 8 === '') {
+      if (password.trim().length < 8) {
         console.log("empty")
       }
 

@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 export default function AdminToken() {
 
    
-    const [token, setToken] = useState('')
+    // const [token, setToken] = useState('')
 
 
 
@@ -20,9 +20,9 @@ export default function AdminToken() {
 
       
 
-      if (token === '') {
-        console.log("empty")
-      }
+      // if (token === '') {
+      //   console.log("empty")
+      // }
 
      
     }
