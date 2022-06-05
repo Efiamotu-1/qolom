@@ -55,7 +55,7 @@ export default function AdminSignUp() {
 
       if (name.trim() && address.trim() && email.trim().includes('@') && password.trim().length > 7) {
         
-        fetch('http://localhost:4000/users', {
+        fetch('http://54.227.124.36:9000/api/account/business-profile/', {
           method : 'POST',
           headers : {"content-type" : "application/json"},
           body : JSON.stringify({name, address, email, password})
