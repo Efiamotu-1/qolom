@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {Grid,Button, Card, CardContent, Typography,Box, TextField, CardActions, Link } from '@mui/material'
 import Logo from '../assets/images/vector/default-monochrome.svg'
 import {ChevronLeft} from '@mui/icons-material'
+import {useNavigate} from 'react-router-dom'
 // import { makeStyles } from '@material-ui/core'
 // import CountrySelect from '../components/Selectors/CountrySelect';
 // import StateSelect from '../components/Selectors/StateSelect';
@@ -21,8 +22,10 @@ import {ChevronLeft} from '@mui/icons-material'
 
 export default function AdminSignUp() {
 
-    const [firstname, setFirstname] = useState('')
-    const [lastname, setLastname] = useState('')
+  const navigate = useNavigate()
+
+    const [name, setName] = useState('')
+    const [address, setAddress] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -34,21 +37,31 @@ export default function AdminSignUp() {
     const handleSubmit = (e) => {
       e.preventDefault()
 
-      if (firstname === '') {
+      if (name.trim().length > 50) {
+        alert("empty");
+      }
+
+      if (address.trim().length > 100) {
         console.log("empty")
       }
 
-      if (lastname === '') {
+      if (!email.trim().includes('@')) {
         console.log("empty")
       }
 
-      if (email === '') {
+      if (password.trim().length < 8 === '') {
         console.log("empty")
       }
 
-      if (password === '') {
-        console.log("empty")
+      if (name.trim() && address.trim() && email.trim().includes('@') && password.trim().length > 7) {
+        
+        fetch('http://localhost:4000/users', {
+          method : 'POST',
+          headers : {"content-type" : "application/json"},
+          body : JSON.stringify({name, address, email, password})
+        }).then(() => navigate('/admin/register/verify'))
       }
+
 
      
     }
@@ -102,7 +115,7 @@ export default function AdminSignUp() {
      color='primary' 
      fullWidth
      required
-     onChange={(e) => {setFirstname(e.target.value)}}
+     onChange={(e) => {setName(e.target.value)}}
    />   
   <br/>
 
@@ -115,7 +128,7 @@ export default function AdminSignUp() {
      color='primary' 
      fullWidth
      required
-     onChange={(e) => {setLastname(e.target.value)}}
+     onChange={(e) => {setAddress(e.target.value)}}
 
    />   
   <br/>
