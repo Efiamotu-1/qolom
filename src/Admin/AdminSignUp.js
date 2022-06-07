@@ -60,6 +60,7 @@ export default function AdminSignUp() {
           headers : {"content-type" : "application/json"},
           body : JSON.stringify({name, address, email, password})
         }).then(() => navigate('/admin/register/verify'))
+        .catch((err)=> console.log('couldnt send data'))
       }
 
 
@@ -67,7 +68,7 @@ export default function AdminSignUp() {
     }
 
   return (
-    <Grid xs={12} md={6} lg={6}>
+    <Grid item xs={12} md={6} lg={6}>
 {/* <Toolbar /> */}
       
 <Card sx={{ maxWidth: 400, marginLeft : 'auto', marginRight : 'auto', my : 5}} elevation={10}>
