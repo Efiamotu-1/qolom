@@ -41,12 +41,12 @@ function Login() {
       // return
     }
     if (email === '' ) {
-      alert('invalid email')
+      console.log('invalid email')
 
     }
 
     if (password === '' || password.trim().length < 7) {
-      alert('invalid password')
+      console.log('invalid password')
 
     }
 
