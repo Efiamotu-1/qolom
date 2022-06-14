@@ -10,16 +10,6 @@ import {useNavigate} from 'react-router-dom'
 
 
 
-
-// const useStyles = makeStyles({
-//     fill : {
-//         width : '100%',
-//         borderWidth : '100%',
-//         borderRadius : 5,
-//         background : 'red'
-//     }
-// })
-
 export default function AdminSignUp() {
 
   const navigate = useNavigate()
@@ -28,6 +18,7 @@ export default function AdminSignUp() {
     const [address, setAddress] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [errors, setErrors] = useState()
 
 
 
@@ -55,12 +46,32 @@ export default function AdminSignUp() {
 
       if (name.trim() && address.trim() && email.trim().includes('@') && password.trim().length > 7) {
         
-        fetch('http://54.227.124.36:9000/api/account/business-profile/', {
+        // fetch('http://localhost:4000/users', {
+          fetch('http://qolom-container-load-balancer-556861353.us-east-1.elb.amazonaws.com:9000/api/account/business-profile/', {
           method : 'POST',
           headers : {"content-type" : "application/json"},
-          body : JSON.stringify({name, address, email, password})
-        }).then(() => navigate('/admin/register/verify'))
-        .catch((err)=> console.log('couldnt send data'))
+          body : JSON.stringify({name, address, email, password})})
+          .then((res) => {
+            console.log(res.status)
+            console.log(res.json())
+            if (res.status === 201) {
+              fetch('http://qolom-container-load-balancer-556861353.us-east-1.elb.amazonaws.com:9000/api/account/activation/', {
+                method : 'POST',
+                headers : {'content-type' : "application/json"},
+                body : JSON.stringify({email})
+              })
+             .then((res) => {
+                console.log(res.status)
+                console.log(res.json())
+                res.json()
+
+             }).then((data) => setErrors(data)) 
+          // .then(() => navigate('/admin/register/verify'))
+          .catch((err)=> console.log("couldn't send data"))
+
+            }
+          })
+          // .then(() => navigate('/admin/register/verify'))
       }
 
 

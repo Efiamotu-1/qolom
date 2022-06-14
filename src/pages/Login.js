@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Logo from '../assets/images/vector/default-monochrome.svg'
 import {useNavigate} from 'react-router-dom'
 import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput} from '@mui/material'
@@ -8,9 +8,19 @@ function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [users, setUsers] = useState([])
   const [showPassword, setShowPassword] = useState(false)
 
   const navigate= useNavigate()
+
+  useEffect(()=> {
+    // fetch('http://54.159.134.168:9000/api/account/business-profile/sign-in/')
+    fetch('http://localhost:4000/users')
+    .then(response => response.json())
+    .then(data => setUsers(data))
+  }, [])
+
+
   
   const handleClickShowPassword = () => {
     setShowPassword((prev) => !showPassword);
@@ -22,6 +32,7 @@ function Login() {
 
   
   }
+  // console.log(users[0])
 
 
 
@@ -29,17 +40,22 @@ function Login() {
     e.preventDefault()
 
   
-    if (email.includes('@') && password.trim().length > 7) {
+    if (email.includes('@') && email === users.email && password.trim().length > 7) {
       
-      fetch('http://54.227.124.36:9000/api/account/business-profile/sign-in/', {
-        method : 'POST',
-        headers : {"content-type" : "application/json"},
-        body : JSON.stringify({email, password})
-      }).then(
-        navigate('/admin/dashboard'))
+      navigate('/admin/dashboard')
+      // fetch('http://localhost:4000/users', {
+      //   method : 'POST',
+      //   headers : {"content-type" : "application/json"},
+      //   body : JSON.stringify({email, password})
+      // }).then(
+      //   navigate('/admin/dashboard'))
 
       // return
+
+     
     }
+
+
     if (email === '' ) {
       console.log('invalid email')
 

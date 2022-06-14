@@ -96,6 +96,41 @@
       "email": "starbucks@gmail.com",
       "password": "1234567890",
       "id": "E2LMdZO"
+    },
+    {
+      "name": "Strain",
+      "address": "1, ajao road ikeja",
+      "email": "@",
+      "password": "123456789",
+      "id": "IJwy_HR"
+    },
+    {
+      "name": "asdfghjkl@",
+      "address": "1, ajao road ikeja",
+      "email": "@",
+      "password": "1234567890-",
+      "id": "QalTlO-"
+    },
+    {
+      "name": "login",
+      "address": "1, yaba lagos",
+      "email": "@",
+      "password": "12345672345",
+      "id": "8VR9iCQ"
+    },
+    {
+      "name": "login",
+      "address": "1, yaba lagos",
+      "email": "@",
+      "password": "12345672345",
+      "id": "SFZ9w3m"
+    },
+    {
+      "name": "asdfrgtyhujikl",
+      "address": "1, yaba lagos",
+      "email": "@",
+      "password": "12345t678909",
+      "id": "2FfTZkl"
     }
   ]
 }
