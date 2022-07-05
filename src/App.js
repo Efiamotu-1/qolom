@@ -8,7 +8,7 @@ import Login from './pages/Login';
 import SignUp from './pages/UserSignUp';
 import AdminSignUp from '../src/Admin/AdminSignUp'
 import AdminToken from '../src/Admin/AdminToken'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 // import Line from './Admin/Line';
 // import Test from './components/test';
 
@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux';
 
 export default function App() {
 // const classes = useStyles();
-const show = useSelector(store => store.auth.isAuthenticated)
+// const show = useSelector(store => store.auth.isAuthenticated)
 
 
   return (

@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import Logo from '../assets/images/vector/default-monochrome.svg'
 import {useNavigate} from 'react-router-dom'
-import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput} from '@mui/material'
+import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl} from '@mui/material'
 import { ChevronLeft, Visibility, VisibilityOff } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 
@@ -9,7 +9,6 @@ function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [users, setUsers] = useState([])
   const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState(false)
   const [errorMessage, setErrorMessage] = useState([])
@@ -29,16 +28,6 @@ function Login() {
   const handleClickShowPassword = () => {
     setShowPassword((prev) => !showPassword);
   };
-
-
-  const handleChange = (e) => {
-   setPassword(e.target.value)
-   setErrors(false)
-   
-  
-  }
-  // console.log(users[0])
-
 
 
   const handleSubmit = async (e) => {

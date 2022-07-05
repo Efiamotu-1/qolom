@@ -2,12 +2,9 @@
 import React from "react";
 // import Bunny from "../assests/images/carousel.jpg";
 import {Link} from '@mui/material'
-import { useDispatch, useSelector } from "react-redux";
 
 function Carousels() {
 
-  const hide = useSelector(store => store.auth.isAuthenticated)
-  const dispatch = useDispatch()
 
 
   return (
