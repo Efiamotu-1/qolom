@@ -56,7 +56,7 @@ export default function BusinessHours() {
     e.preventDefault()    
 
     if(mondayOpenTime && tuesdayOpenTime && wednesdayOpenTime && thursdayOpenTime && fridayOpenTime && saturdayOpenTime && sundayOpenTime) {
-      const response = await fetch('http://backend.qolom.com/api/business/calendar/', {
+      const response = await fetch('https://backend.qolom.com/api/business/calendar/', {
       method : 'PUT',
       headers : {'content-type' : 'application/json'},  
       body : JSON.stringify({
