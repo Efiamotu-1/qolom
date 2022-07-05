@@ -55,7 +55,7 @@ function Carousels() {
       <div class="row justify-content-center" >
                     <Link href="/register">
     
-                      <button onClick={() => {dispatch({type : 'login'})}} class="btn btn-primary btn-lg"> Get Started</button>
+                      <button class="btn btn-primary btn-lg"> Get Started</button>
                     </Link>
      </div>
     </>
