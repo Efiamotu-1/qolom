@@ -3,6 +3,7 @@ import Logo from '../assets/images/vector/default-monochrome.svg'
 import {useNavigate} from 'react-router-dom'
 import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, Link, InputAdornment, IconButton, FormControl, InputLabel, OutlinedInput} from '@mui/material'
 import { ChevronLeft, Visibility, VisibilityOff } from '@mui/icons-material'
+import { useDispatch } from 'react-redux'
 
 function Login() {
 
@@ -10,15 +11,18 @@ function Login() {
   const [password, setPassword] = useState('')
   const [users, setUsers] = useState([])
   const [showPassword, setShowPassword] = useState(false)
+  const [errors, setErrors] = useState(false)
+  const [errorMessage, setErrorMessage] = useState([])
+  const dispatch = useDispatch()
 
-  const navigate= useNavigate()
+  const navigate = useNavigate()
 
-  useEffect(()=> {
-    // fetch('http://54.159.134.168:9000/api/account/business-profile/sign-in/')
-    fetch('http://localhost:4000/users')
-    .then(response => response.json())
-    .then(data => setUsers(data))
-  }, [])
+  // useEffect(()=> {
+  //   // fetch('http://54.159.134.168:9000/api/account/business-profile/sign-in/')
+  //   fetch('http://localhost:4000/users')
+  //   .then(response => response.json())
+  //   .then(data => setUsers(data))
+  // }, [])
 
 
   
@@ -29,29 +33,39 @@ function Login() {
 
   const handleChange = (e) => {
    setPassword(e.target.value)
-
+   setErrors(false)
+   
   
   }
   // console.log(users[0])
 
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
   
-    if (email.includes('@') && email === users.email && password.trim().length > 7) {
+    if (email.includes('@') && password.trim().length > 7) {
       
-      navigate('/admin/dashboard')
-      // fetch('http://localhost:4000/users', {
-      //   method : 'POST',
-      //   headers : {"content-type" : "application/json"},
-      //   body : JSON.stringify({email, password})
-      // }).then(
-      //   navigate('/admin/dashboard'))
+      // navigate('/admin/dashboard')
+      const response = await fetch('http://backend.qolom.com/api/account/business-profile/sign-in/', {
+        method : 'POST',
+        headers : {"content-type" : "application/json"},
+        body : JSON.stringify({email, password})
+      })
+      console.log(response.status)
+      if(response.status === 200) {
+        navigate('/admin/dashboard')
+        dispatch({type : 'login'})
+      } 
+      const data = await response.json()
 
-      // return
+      setErrorMessage(data)
 
+      if(response.status === 400) {
+        console.log(response.status)
+        setErrors(true)
+      }
      
     }
 
@@ -107,37 +121,52 @@ function Login() {
 
       <TextField 
        label='Email Address' 
-       variant='outlined'
+      //  variant='filled'
        color='primary' 
        fullWidth
-       onChange= {(e) => { setEmail(e.target.value)}}
+       onChange= {(e) => { 
+        setEmail(e.target.value) 
+        setErrors(false)
+      }}
+       error={errors}
+       helperText={errors ? errorMessage.email : ''}
 
      />   
     <br/><br/>
 
     <br/>
     <FormControl sx={{ width: '100%' }} variant="outlined">
-    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-    <OutlinedInput
+    <TextField
       id="outlined-adornment-password"
       type={showPassword ? 'text' : 'password'}
       value={password}
-      onChange={handleChange}
+      onChange={(e) => 
+        {
+          setPassword(e.target.value)
+          setErrors(false)
+        }}
       label="Password"
-      endAdornment={
-        <InputAdornment position="end">
-          <IconButton
-            aria-label="toggle password visibility"
-            onClick={handleClickShowPassword}
-            edge="end"
-          >
-            {showPassword ? <VisibilityOff /> : <Visibility />}
-          </IconButton>
-        </InputAdornment>
-      }
+      error={errors}
+      helperText= {errors ? errorMessage.email : '' }
+      InputProps = {{
+        endAdornment : (
+          <InputAdornment position="end">
+            <IconButton
+              aria-label="toggle password visibility"
+              onClick={handleClickShowPassword}
+              edge="end"
+            >
+              {showPassword ? <VisibilityOff /> : <Visibility />}
+            </IconButton>
+          </InputAdornment>
+        )
+      }}
     />
   </FormControl>
-    <br/><br/>
+  <br />
+  <br />
+  <Link to="/register"> <Typography align="right" color="blue" paragraph>Forgot Password ?</Typography> </Link>
+    {/* <br/> */}
 
     <CardActions>
       <Button type="submit" variant='contained' sx={{width: '100%', }}>Sign In</Button> 

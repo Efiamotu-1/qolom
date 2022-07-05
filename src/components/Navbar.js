@@ -18,6 +18,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Avatar } from '@mui/material';
 import Logo from '../assets/images/logo-mock.jpg'
+import { LogoutOutlined } from '@mui/icons-material';
 
 const drawerWidth = 240
 
@@ -233,14 +234,12 @@ export default function PrimarySearchAppBar(props) {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              color="primary"
             >
-              <Avatar 
-              src={Logo}
-              sx={{color: 'gray', width : 40}}/>
+              <LogoutOutlined sx={{color : 'gray'}}/>
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          {/* <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="show more"
@@ -251,7 +250,7 @@ export default function PrimarySearchAppBar(props) {
             >
               <MoreIcon />
             </IconButton>
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

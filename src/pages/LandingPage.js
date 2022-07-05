@@ -1,3 +1,4 @@
+
 import React from "react";
 // import { Link } from 'react-router-dom'
 import { Navbar, Nav, } from "react-bootstrap";
@@ -68,8 +69,8 @@ function LandingPage() {
     <div className={classes.layoutBackground}>
    
 
-      <div class="m-auto" style={mystyle} >
-      <div class="d-flex align-items-center flex-column" style={opacity}>
+      <div className="m-auto" style={mystyle} >
+      <div className="d-flex align-items-center flex-column" style={opacity}>
       <Navbar collapseOnSelect expand="lg" style={{width : '100%'}}>
         <Navbar.Brand href="#home" style={{marginLeft : 25, color : 'blue'}}>
           <img src={Logo} alt="../" width="100px" height="20px"/>
@@ -93,7 +94,7 @@ function LandingPage() {
         </Navbar.Collapse>
       </Navbar>
         <div
-          class="m-auto text-white d-flex flex-column align-items-center"
+          className="m-auto text-white d-flex flex-column align-items-center"
           // style={{}}
         >
           <Carousels />

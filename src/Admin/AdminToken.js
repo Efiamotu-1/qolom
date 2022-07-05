@@ -2,27 +2,56 @@
 import {Grid,Button, Card, CardContent, Typography,Box, TextField, CardActions, Toolbar } from '@mui/material'
 import Logo from '../assets/images/vector/default-monochrome.svg'
 import {ChevronLeft} from '@mui/icons-material'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 export default function AdminToken() {
 
-   
-    // const [token, setToken] = useState('')
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const email = useSelector(store => store.business.email)
+    const [token, setToken] = useState('')
+    const [errors, setErrors] = useState(false)
+    const [errorMessage, setErrorMessage] = useState([])
 
 
-
+// console.log(email);
 
     
    
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
+
       e.preventDefault()
 
-      
+      if (token === '') {
+        return
+      }
 
-      // if (token === '') {
-      //   console.log("empty")
-      // }
+      if (token) {
+        const sendToken = await fetch ('http://backend.qolom.com/api/account/business-profile/activation/verify/', {
+          method : 'POST',
+          headers : {'content-type' : "application/json"},
+          body : JSON.stringify({token , email})
+        })
+       
+        if(sendToken.status === 200) {
+          // console.log(response)
+          navigate('/admin/dashboard')
+          dispatch({type : 'login'})
+        }
+
+        console.log(sendToken.status)
+        const res = await sendToken.json()
+        setErrorMessage(res)
+
+        if(sendToken.status === 400) {
+          setErrors(true)
+        }
+
+      }
+
 
      
     }
@@ -72,7 +101,9 @@ export default function AdminToken() {
      color='primary' 
      fullWidth
      required
-    //  onChange={(e) => {setFirstname(e.target.value)}}
+     onChange={(e) => {setToken(e.target.value)}}
+     error={errorMessage.non_field_errors ? true : false}
+     helperText = {errors ? errorMessage.non_field_errors : 'welcome token'}
    />   
   <br/><br/>
 
