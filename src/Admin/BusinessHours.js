@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { TimePicker } from "@mui/x-date-pickers";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   cardWidth: {
@@ -28,6 +29,7 @@ const useStyles = makeStyles({
 
 export default function BusinessHours() {
   const classes = useStyles();
+  const token = useSelector(store => store.auth.token)
 
   const [mondayOpenTime, setMondayOpenTime] = useState(null);
   const [mondayCloseTime, setMondayCloseTime] = useState(null)
@@ -51,30 +53,35 @@ export default function BusinessHours() {
   const [sundayCloseTime, setSundayCloseTime] = useState(null)
 
 
-
+console.log(token)
+console.log(localStorage.getItem('token'))
   const handleSubmit = async(e) => {
     e.preventDefault()    
 
-    if(mondayOpenTime && tuesdayOpenTime && wednesdayOpenTime && thursdayOpenTime && fridayOpenTime && saturdayOpenTime && sundayOpenTime) {
+    if((mondayOpenTime && mondayCloseTime) || (tuesdayOpenTime && tuesdayCloseTime) || (wednesdayOpenTime && wednesdayCloseTime) || (thursdayOpenTime && thursdayCloseTime) || (fridayOpenTime && fridayCloseTime) || (saturdayOpenTime & saturdayCloseTime) || (sundayOpenTime && sundayCloseTime) ) {
       const response = await fetch('http://backend.qolom.com/api/business/calendar/', {
-      method : 'PUT',
-      headers : {'content-type' : 'application/json'},  
+      method : 'PATCH',
+      headers : { 
+        'content-type' : 'application/json', 
+        'Authorization' : `Token ${localStorage.getItem('token')}`
+      },
+        
       body : JSON.stringify({
-          // token : localStorage.getItem({token}),
-          mo_o : mondayOpenTime.toLocaleTimeString(),
-          mo_c : mondayCloseTime.toLocaleTimeString(),
-          tu_o : tuesdayOpenTime.toLocaleTimeString(),
-          tu_c : tuesdayCloseTime.toLocaleTimeString(),
-          we_o : wednesdayOpenTime.toLocaleTimeString(),
-          we_c : wednesdayCloseTime.toLocaleTimeString(),
-          th_o : thursdayOpenTime.toLocaleTimeString(),
-          th_c : thursdayCloseTime.toLocaleTimeString(),
-          fr_o : fridayOpenTime.toLocaleTimeString(),
-          fr_c : fridayCloseTime.toLocaleTimeString(),
-          sa_o : saturdayOpenTime.toLocaleTimeString(),
-          sa_c : saturdayCloseTime.toLocaleTimeString(),
-          su_o : sundayOpenTime.toLocaleTimeString(),
-          su_c : sundayCloseTime.toLocaleTimeString()
+          
+          mo_o : mondayOpenTime ? mondayOpenTime.toLocaleTimeString() : null,
+          mo_c : mondayCloseTime ? mondayCloseTime.toLocaleTimeString() : null,
+          tu_o : tuesdayOpenTime ? tuesdayOpenTime.toLocaleTimeString() : null,
+          tu_c : tuesdayCloseTime ? tuesdayCloseTime.toLocaleTimeString() : null,
+          we_o : wednesdayOpenTime ? wednesdayOpenTime.toLocaleTimeString() : null,
+          we_c : wednesdayCloseTime ? wednesdayCloseTime.toLocaleTimeString() : null,
+          th_o : thursdayOpenTime ? thursdayOpenTime.toLocaleTimeString() : null,
+          th_c : thursdayCloseTime ? thursdayCloseTime.toLocaleTimeString() : null,
+          fr_o : fridayOpenTime ? fridayOpenTime.toLocaleTimeString() : null,
+          fr_c : fridayCloseTime ? fridayCloseTime.toLocaleTimeString() : null,
+          sa_o : saturdayOpenTime ? saturdayOpenTime.toLocaleTimeString() : null,
+          sa_c : saturdayCloseTime ? saturdayCloseTime.toLocaleTimeString() : null,
+          su_o : sundayOpenTime ? sundayOpenTime.toLocaleTimeString() : null,
+          su_c : sundayCloseTime ? sundayCloseTime.toLocaleTimeString() : null          
         })
       })
 

@@ -1,18 +1,18 @@
+
 import React, {useState} from 'react'
 import Logo from '../assets/images/vector/default-monochrome.svg'
-import {Link, useNavigate} from 'react-router-dom'
-import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, InputAdornment, IconButton, FormControl} from '@mui/material'
+import {useNavigate} from 'react-router-dom'
+import {Card, CardContent, CardActions, Box, Button, Toolbar, TextField, Grid, InputAdornment, IconButton, FormControl} from '@mui/material'
 import { ChevronLeft, Visibility, VisibilityOff } from '@mui/icons-material'
-import { useDispatch } from 'react-redux'
 
-function Login() {
+const ResetPassword = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState(false)
   const [errorMessage, setErrorMessage] = useState([])
-  const dispatch = useDispatch()
+  const [token, setToken] = useState('')
 
   const navigate = useNavigate()
 
@@ -34,25 +34,23 @@ function Login() {
     e.preventDefault()
 
   
-    if (email.includes('@') && password.trim().length > 7) {
+    if (email.includes('@') && password.trim().length > 7 && token) {
       
       // navigate('/admin/dashboard')
-      const response = await fetch('http://backend.qolom.com/api/account/business-profile/sign-in/', {
+      const response = await fetch('http://backend.qolom.com/api/account/reset-password/verify/', {
         method : 'POST',
         headers : {"content-type" : "application/json"},
-        body : JSON.stringify({email, password})
+        body : JSON.stringify({email, password, token})
       })
       let data = await response.json()
+      console.log(data)
       console.log(response.status)
       if(response.ok) {
         navigate('/admin/dashboard')
-        dispatch({type : 'LOGIN'})
         localStorage.setItem('token', data.token)
         console.log(data.token)
+
       } 
-      if(!response.ok) {
-        dispatch({type : 'RESET', payload : {email}})
-      }
       // const data = await response.json()
 
       // console.log(data.token)
@@ -70,7 +68,6 @@ function Login() {
       console.log('invalid email')
       setErrors(true)
 
-
     }
 
     if (password === '' || password.trim().length < 7) {
@@ -85,6 +82,7 @@ function Login() {
   }
 
   return (
+  
       // <div style={{backgroundColor : 'rgba(0, 0, 0, 0.75'}}>
       <Grid item xs={12} md={6} lg={6}>
       <Toolbar />
@@ -145,7 +143,7 @@ function Login() {
           setPassword(e.target.value)
           setErrors(false)
         }}
-      label="Password"
+      label="New Password"
       error={errors}
       helperText= {errors ? errorMessage.email : '' }
       InputProps = {{
@@ -165,34 +163,39 @@ function Login() {
   </FormControl>
   <br />
   <br />
-  <Link to="/forgotpassword" >
+    <br/>
 
-     <Typography paragraph sx={{textDecoration : 'wavy'}}>Forgot Password ?</Typography>
-  </Link>
-    {/* <br/> */}
+    <TextField 
+       label='Token' 
+      //  variant='filled'
+       color='primary' 
+       fullWidth
+       onChange= {(e) => { 
+        setToken(e.target.value) 
+        setErrors(false)
+      }}
+       error={errors}
+       helperText={errors ? errorMessage.email : ''}
+
+     />   
+    <br/>
+    <br/>
 
     <CardActions>
-      <Button type="submit" variant='contained' sx={{width: '100%', }}>Sign In</Button> 
+      <Button type="submit" variant='contained' sx={{width: '100%', }}>RESET PASSWORD</Button> 
     </CardActions>
 
       </form>
     </CardContent>
 
-      <Typography paragraph sx={{ml:2}} align="center">
-          Don't have an account? <Link to="/register" >Sign Up</Link> 
-      </Typography>
-
-       <Typography  align="center">OR</Typography>
-
-      <Typography align="center">
-      <Link to="/admin/register">Register as a business</Link>
-
-      </Typography>
-        <br/>
+      
     </Card>
     </Grid>
     // </div>
-  )
+    )
 }
 
-export default Login
+
+
+export default ResetPassword
+

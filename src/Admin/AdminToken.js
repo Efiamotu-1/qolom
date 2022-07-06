@@ -63,13 +63,13 @@ export default function AdminToken() {
 <Card sx={{ maxWidth: 400, marginLeft : 'auto', marginRight : 'auto', my : 5}} elevation={10}>
     <CardContent>
     <Link to="/admin/register">
-    <Button
+      <Button
             variant="text"
             startIcon={<ChevronLeft />}
             color="primary"
           >
             Back to Sign Up
-          </Button><br/>
+      </Button><br/>
     </Link>
     
 
