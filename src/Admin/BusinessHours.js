@@ -58,8 +58,7 @@ console.log(localStorage.getItem('token'))
   const handleSubmit = async(e) => {
     e.preventDefault()    
 
-    if((mondayOpenTime && mondayCloseTime) || (tuesdayOpenTime && tuesdayCloseTime) || (wednesdayOpenTime && wednesdayCloseTime) || (thursdayOpenTime && thursdayCloseTime) || (fridayOpenTime && fridayCloseTime) || (saturdayOpenTime & saturdayCloseTime) || (sundayOpenTime && sundayCloseTime) ) {
-      const response = await fetch('http://backend.qolom.com/api/business/calendar/', {
+      const response = await fetch('https://backend.qolom.com/api/business/calendar/', {
       method : 'PATCH',
       headers : { 
         'content-type' : 'application/json', 
@@ -67,12 +66,6 @@ console.log(localStorage.getItem('token'))
       },
         
       body : JSON.stringify({
-          
-          mo_o : mondayOpenTime ? mondayOpenTime.toLocaleTimeString() : null,
-          mo_c : mondayCloseTime ? mondayCloseTime.toLocaleTimeString() : null,
-          tu_o : tuesdayOpenTime ? tuesdayOpenTime.toLocaleTimeString() : null,
-          tu_c : tuesdayCloseTime ? tuesdayCloseTime.toLocaleTimeString() : null,
-          we_o : wednesdayOpenTime ? wednesdayOpenTime.toLocaleTimeString() : null,
           we_c : wednesdayCloseTime ? wednesdayCloseTime.toLocaleTimeString() : null,
           th_o : thursdayOpenTime ? thursdayOpenTime.toLocaleTimeString() : null,
           th_c : thursdayCloseTime ? thursdayCloseTime.toLocaleTimeString() : null,

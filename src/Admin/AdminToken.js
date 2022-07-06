@@ -30,7 +30,7 @@ export default function AdminToken() {
       }
 
       if (token) {
-        const sendToken = await fetch ('http://backend.qolom.com/api/account/business-profile/activation/verify/', {
+        const sendToken = await fetch ('https://backend.qolom.com/api/account/business-profile/activation/verify/', {
           method : 'POST',
           headers : {'content-type' : "application/json"},
           body : JSON.stringify({token , email})

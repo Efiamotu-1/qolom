@@ -53,7 +53,7 @@ export default function AdminSignUp() {
 
       if (name.trim() && address.trim() && email.trim().includes('@') && password.trim().length > 7) {
         
-          let authenticate = await fetch('http://backend.qolom.com/api/account/business-profile/', {
+          let authenticate = await fetch('https://backend.qolom.com/api/account/business-profile/', {
           method : 'POST',
           headers : {"content-type" : "application/json"},
           body : JSON.stringify({name, address, email, password})});
@@ -70,7 +70,7 @@ export default function AdminSignUp() {
             dispatch({type : 'signIn', payload : {name, address, email, password}})
           }
           if (authenticate.status === 201){
-            let verify = await fetch('http://backend.qolom.com/api/account/activation/', {
+            let verify = await fetch('https://backend.qolom.com/api/account/activation/', {
                 method : 'POST',
                 headers : {'content-type' : "application/json"},
                 body : JSON.stringify({email})

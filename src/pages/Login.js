@@ -37,7 +37,7 @@ function Login() {
     if (email.includes('@') && password.trim().length > 7) {
       
       // navigate('/admin/dashboard')
-      const response = await fetch('http://backend.qolom.com/api/account/business-profile/sign-in/', {
+      const response = await fetch('https://backend.qolom.com/api/account/business-profile/sign-in/', {
         method : 'POST',
         headers : {"content-type" : "application/json"},
         body : JSON.stringify({email, password})
