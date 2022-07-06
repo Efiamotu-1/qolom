@@ -53,8 +53,7 @@ export default function BusinessHours() {
   const [sundayCloseTime, setSundayCloseTime] = useState(null)
 
 
-console.log(token)
-console.log(localStorage.getItem('token'))
+// console.log(localStorage.getItem('token'))
   const handleSubmit = async(e) => {
     e.preventDefault()    
 
@@ -86,7 +85,6 @@ console.log(localStorage.getItem('token'))
 
     
   
-  }
 
   return (
     <Grid container>
@@ -372,5 +370,6 @@ console.log(localStorage.getItem('token'))
     </Grid>
   );
 }
+
 
 

@@ -3,7 +3,7 @@ import Logo from '../assets/images/vector/default-monochrome.svg'
 import {Link, useNavigate} from 'react-router-dom'
 import {Card, CardContent, Typography, CardActions, Box, Button, Toolbar, TextField, Grid, InputAdornment, IconButton, FormControl} from '@mui/material'
 import { ChevronLeft, Visibility, VisibilityOff } from '@mui/icons-material'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
 function Login() {
 
@@ -12,7 +12,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState(false)
   const [errorMessage, setErrorMessage] = useState([])
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -46,13 +46,11 @@ function Login() {
       console.log(response.status)
       if(response.ok) {
         navigate('/admin/dashboard')
-        dispatch({type : 'LOGIN'})
+        // dispatch({type : 'LOGIN'})
         localStorage.setItem('token', data.token)
         console.log(data.token)
       } 
-      if(!response.ok) {
-        dispatch({type : 'RESET', payload : {email}})
-      }
+    
       // const data = await response.json()
 
       // console.log(data.token)
